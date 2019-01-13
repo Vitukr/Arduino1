@@ -28,21 +28,21 @@
   <Minutes><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>28</LINE></Minutes>
   <Hours><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>29</LINE></Hours>
   <Reset><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>107</LINE></Reset>
-  <TIM1_OVF><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>169</LINE></TIM1_OVF>
-  <Init_TIMER1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>151</LINE></Init_TIMER1>
-  <Init_PORTS><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>161</LINE></Init_PORTS>
-  <Timer_restart><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>182</LINE></Timer_restart>
-  <Main><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>143</LINE></Main>
-  <DisplayTwoPoints><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>203</LINE></DisplayTwoPoints>
-  <Display><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>228</LINE></Display>
-  <EndMain><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>147</LINE></EndMain>
-  <Continue><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>177</LINE></Continue>
-  <Display_test><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>190</LINE></Display_test>
-  <digits><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>295</LINE></digits>
-  <Delay_1ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>273</LINE></Delay_1ms>
-  <NoBlink><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>225</LINE></NoBlink>
-  <L1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>276</LINE></L1>
-  <Delay_10ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>284</LINE></Delay_10ms>
-  <L10><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>287</LINE></L10>
+  <TIM1_OVF><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>173</LINE></TIM1_OVF>
+  <Init_TIMER1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>155</LINE></Init_TIMER1>
+  <Init_PORTS><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>165</LINE></Init_PORTS>
+  <Timer_restart><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>186</LINE></Timer_restart>
+  <Main><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>147</LINE></Main>
+  <DisplayTwoPoints><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>207</LINE></DisplayTwoPoints>
+  <Display><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>232</LINE></Display>
+  <EndMain><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>151</LINE></EndMain>
+  <Continue><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>181</LINE></Continue>
+  <Display_test><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>194</LINE></Display_test>
+  <digits><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>299</LINE></digits>
+  <Delay_1ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>277</LINE></Delay_1ms>
+  <NoBlink><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>229</LINE></NoBlink>
+  <L1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>280</LINE></L1>
+  <Delay_10ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>288</LINE></Delay_10ms>
+  <L10><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>291</LINE></L10>
  </LABELS>
 </ASSEMBLER_INFO>

@@ -133,6 +133,10 @@ Reset: // Предустановки
 				
 				rcall Init_TIMER1
 				rcall Init_PORTS
+
+				ldi common, 0b00000011		; cathode
+				out PortC, common
+
 				eor halfSecond, halfSecond
 				
 				rcall Timer_restart

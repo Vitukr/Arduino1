@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Sun Jan 13 19:20:37 2019
+AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Sun Jan 13 22:30:34 2019
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc'
@@ -1018,7 +1018,7 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
                                  .org 0
 000000 c01a                      rjmp Reset
                                  .org 0x001A
-00001a c025                      rjmp TIM1_OVF
+00001a c027                      rjmp TIM1_OVF
                                  
                                  
                                  
@@ -1117,123 +1117,127 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 000023 9300 0105                 				sts Minutes, temp
 000025 9300 0106                 				sts Hours, temp
                                  				
-000027 d007                      				rcall Init_TIMER1
-000028 d011                      				rcall Init_PORTS
-000029 2799                      				eor halfSecond, halfSecond
+000027 d009                      				rcall Init_TIMER1
+000028 d013                      				rcall Init_PORTS
+                                 
+000029 e013                      				ldi common, 0b00000011		; cathode
+00002a b918                      				out PortC, common
+                                 
+00002b 2799                      				eor halfSecond, halfSecond
                                  				
-00002a d03b                      				rcall Timer_restart
-00002b 9478                      				sei
+00002c d03b                      				rcall Timer_restart
+00002d 9478                      				sei
                                  ;*********************************************************
                                  ;MAIN 0x00D
                                  ;*********************************************************
                                  Main:   
                                  				//rcall Display_test
-00002c d05b                      				rcall DisplayTwoPoints
-00002d d063                      				rcall Display        ;цикл индикации
+00002e d05b                      				rcall DisplayTwoPoints
+00002f d063                      				rcall Display        ;цикл индикации
                                  EndMain:
-00002e cffd                      				rjmp Main
+000030 cffd                      				rjmp Main
                                  
                                  
                                  Init_TIMER1:
-00002f e004                      				ldi temp, 0b00000100
-000030 9300 0081                 				sts TCCR1B, temp
-000032 e001                      				ldi temp, 0b00000001
-000033 9300 006f                 				sts TIMSK1, temp
-000035 e001                      				ldi temp, 0b00000001
-000036 9300 0016                 				sts TIFR1, temp
-000038 d02d                      				rcall Timer_restart
-000039 9508                      				ret
+000031 e004                      				ldi temp, 0b00000100
+000032 9300 0081                 				sts TCCR1B, temp
+000034 e001                      				ldi temp, 0b00000001
+000035 9300 006f                 				sts TIMSK1, temp
+000037 e001                      				ldi temp, 0b00000001
+000038 9300 0016                 				sts TIFR1, temp
+00003a d02d                      				rcall Timer_restart
+00003b 9508                      				ret
                                  
                                  Init_PORTS:
-00003a ef0f                      				ldi temp, 0b11111111
-00003b b904                      				out DDRB, temp
 00003c ef0f                      				ldi temp, 0b11111111
-00003d b90a                      				out DDRD, temp
-00003e e003                      				ldi temp, 0b00000011
-00003f b907                      				out DDRC, temp
+00003d b904                      				out DDRB, temp
+00003e ef0f                      				ldi temp, 0b11111111
+00003f b90a                      				out DDRD, temp
+000040 e003                      				ldi temp, 0b00000011
+000041 b907                      				out DDRC, temp
                                  
                                  TIM1_OVF:		; 0.5 second
-000040 94f8                      				cli
-000041 fb50
-000042 fd50
-000043 94e8
-000044 ff50
-000045 9468
-000046 f950                      				SwapBitInRegister twoPoints, 0
-000047 9593                      				inc halfSecond
-000048 3092                      				cpi halfSecond, 2
-000049 f4c9                      				brne Continue
-00004a 9100 0104
-00004c 9110 0105
-00004e 9120 0106
-000050 9503
-000051 330c
-000052 f411
-000053 2700
-000054 9513
-000055 9300 0104
-000057 331c
-000058 f411
-000059 2711
-00005a 9523
-00005b 9310 0105
-00005d 3128
-00005e f409
-00005f 2722
-000060 9320 0106                 				TimerAddSecond
-000062 2799                      				eor halfSecond, halfSecond
+000042 94f8                      				cli
+000043 fb50
+000044 fd50
+000045 94e8
+000046 ff50
+000047 9468
+000048 f950                      				SwapBitInRegister twoPoints, 0
+000049 9593                      				inc halfSecond
+00004a 3092                      				cpi halfSecond, 2
+00004b f4c9                      				brne Continue
+00004c 9100 0104
+00004e 9110 0105
+000050 9120 0106
+000052 9503
+000053 330c
+000054 f411
+000055 2700
+000056 9513
+000057 9300 0104
+000059 331c
+00005a f411
+00005b 2711
+00005c 9523
+00005d 9310 0105
+00005f 3128
+000060 f409
+000061 2722
+000062 9320 0106                 				TimerAddSecond
+000064 2799                      				eor halfSecond, halfSecond
                                  				Continue:
-000063 d002                      				rcall Timer_restart
-000064 9478                      				sei
-000065 9518                      				reti
+000065 d002                      				rcall Timer_restart
+000066 9478                      				sei
+000067 9518                      				reti
                                  
                                  Timer_restart:			; D9DE 0.5 sec in 20Mhz
-000066 e805                      				ldi temp, $85
-000067 9300 0085                 				sts TCNT1H, temp
-000069 ee0e                      				ldi temp, $EE
-00006a 9300 0084                 				sts TCNT1L, temp	
-00006c 9508                      				ret
+000068 e805                      				ldi temp, $85
+000069 9300 0085                 				sts TCNT1H, temp
+00006b ee0e                      				ldi temp, $EE
+00006c 9300 0084                 				sts TCNT1L, temp	
+00006e 9508                      				ret
                                  
                                  ;*********************************************************
                                  Display_test:
-00006d 2733                      				eor digit0, digit0
-00006e 2744                      				eor digit1, digit1
-00006f 9100 0104
-000071 e02a
-000072 2777
-000073 2788
-000074 2f80
-000075 0b02
-000076 f010
-000077 9573
-000078 cffb
-000079 2f37
-00007a 2f48                      				GradeNumber Seconds, digit0, digit1 
+00006f 2733                      				eor digit0, digit0
+000070 2744                      				eor digit1, digit1
+000071 9100 0104
+000073 e02a
+000074 2777
+000075 2788
+000076 2f80
+000077 0b02
+000078 f010
+000079 9573
+00007a cffb
+00007b 2f37
+00007c 2f48                      				GradeNumber Seconds, digit0, digit1 
                                  
-00007b e118                      				ldi common, 0b00011000		; cathode
-00007c b915                      				out PortB, common
-00007d 2f24                      				mov sys, digit1
-00007e ede8
-00007f e0f1
-000080 e000
-000081 0fe2
-000082 1ff0
-000083 95c8
-000084 2d20                      				Get_constant sys
-000085 b92b                      				out PortD, sys      
-000086 d057                      				rcall Delay_1ms 
-000087 9508                      ret
+00007d e118                      				ldi common, 0b00011000		; cathode
+00007e b915                      				out PortB, common
+00007f 2f24                      				mov sys, digit1
+000080 edec
+000081 e0f1
+000082 e000
+000083 0fe2
+000084 1ff0
+000085 95c8
+000086 2d20                      				Get_constant sys
+000087 b92b                      				out PortD, sys      
+000088 d057                      				rcall Delay_1ms 
+000089 9508                      ret
                                  ;*********************************************************
                                  DisplayTwoPoints:
                                  				/*cpi twoPoints, 0
                                  				breq NoBlink*/	
                                  
-000088 e010                      				ldi common, 0b00000000		
-000089 b915                      				out PortB, common
-00008a d053                      				rcall Delay_1ms
+00008a e010                      				ldi common, 0b00000000		
+00008b b915                      				out PortB, common
+00008c d053                      				rcall Delay_1ms
                                  
-00008b ff50                      				SBRS twoPoints, 0
-00008c c003                      				rjmp NoBlink	
+00008d ff50                      				SBRS twoPoints, 0
+00008e c003                      				rjmp NoBlink	
                                  					
                                  				; dot	
                                  				/*ldi common, 0b00000010		
@@ -1243,95 +1247,95 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
                                  				rcall Delay_1ms*/
                                  
                                  				; two dots
-00008d e110                      				ldi common, 0b00010000		
-00008e b915                      				out PortB, common
-00008f d04e                      				rcall Delay_1ms
+00008f e110                      				ldi common, 0b00010000		
+000090 b915                      				out PortB, common
+000091 d04e                      				rcall Delay_1ms
                                  				NoBlink:
-000090 9508                      				ret
+000092 9508                      				ret
                                  
                                  Display:			; display digits time
                                             
-000091 2733                      				eor digit0, digit0
-000092 2744                      				eor digit1, digit1
-000093 9100 0105
-000095 e02a
-000096 2777
-000097 2788
-000098 2f80
-000099 0b02
-00009a f010
-00009b 9573
-00009c cffb
-00009d 2f37
-00009e 2f48                      				GradeNumber Minutes, digit0, digit1 
+000093 2733                      				eor digit0, digit0
+000094 2744                      				eor digit1, digit1
+000095 9100 0105
+000097 e02a
+000098 2777
+000099 2788
+00009a 2f80
+00009b 0b02
+00009c f010
+00009d 9573
+00009e cffb
+00009f 2f37
+0000a0 2f48                      				GradeNumber Minutes, digit0, digit1 
                                  
-00009f e011                      				ldi common, 0b00000001		; cathode
-0000a0 b915                      				out PortB, common	
-0000a1 2f23                      				mov sys, digit0
-0000a2 ede8
-0000a3 e0f1
-0000a4 e000
-0000a5 0fe2
-0000a6 1ff0
-0000a7 95c8
-0000a8 2d20                      				Get_constant sys
-0000a9 b92b                      				out PortD, sys
-0000aa d033                      				rcall Delay_1ms				;ждем
+0000a1 e011                      				ldi common, 0b00000001		; cathode
+0000a2 b915                      				out PortB, common	
+0000a3 2f23                      				mov sys, digit0
+0000a4 edec
+0000a5 e0f1
+0000a6 e000
+0000a7 0fe2
+0000a8 1ff0
+0000a9 95c8
+0000aa 2d20                      				Get_constant sys
+0000ab b92b                      				out PortD, sys
+0000ac d033                      				rcall Delay_1ms				;ждем
                                  			      
-0000ab e012                      				ldi common, 0b00000010		; cathode
-0000ac b915                      				out PortB, common
-0000ad 2f24                      				mov sys, digit1
-0000ae ede8
-0000af e0f1
-0000b0 e000
-0000b1 0fe2
-0000b2 1ff0
-0000b3 95c8
-0000b4 2d20                      				Get_constant sys
-0000b5 b92b                      				out PortD, sys      
-0000b6 d027                      				rcall Delay_1ms   			  
+0000ad e012                      				ldi common, 0b00000010		; cathode
+0000ae b915                      				out PortB, common
+0000af 2f24                      				mov sys, digit1
+0000b0 edec
+0000b1 e0f1
+0000b2 e000
+0000b3 0fe2
+0000b4 1ff0
+0000b5 95c8
+0000b6 2d20                      				Get_constant sys
+0000b7 b92b                      				out PortD, sys      
+0000b8 d027                      				rcall Delay_1ms   			  
                                  			   
-0000b7 2733                      				eor digit0, digit0
-0000b8 2744                      				eor digit1, digit1
-0000b9 9100 0104
-0000bb e02a
-0000bc 2777
-0000bd 2788
-0000be 2f80
-0000bf 0b02
-0000c0 f010
-0000c1 9573
-0000c2 cffb
-0000c3 2f37
-0000c4 2f48                      				GradeNumber Seconds, digit0, digit1  
+0000b9 2733                      				eor digit0, digit0
+0000ba 2744                      				eor digit1, digit1
+0000bb 9100 0104
+0000bd e02a
+0000be 2777
+0000bf 2788
+0000c0 2f80
+0000c1 0b02
+0000c2 f010
+0000c3 9573
+0000c4 cffb
+0000c5 2f37
+0000c6 2f48                      				GradeNumber Seconds, digit0, digit1  
                                  			    
-0000c5 e014                      				ldi common, 0b00000100		; cathode
-0000c6 b915                      				out PortB, common	
-0000c7 2f23                      				mov sys, digit0
-0000c8 ede8
-0000c9 e0f1
-0000ca e000
-0000cb 0fe2
-0000cc 1ff0
-0000cd 95c8
-0000ce 2d20                      				Get_constant sys
-0000cf b92b                      				out PortD, sys
-0000d0 d00d                      				rcall Delay_1ms				;ждем
+0000c7 e014                      				ldi common, 0b00000100		; cathode
+0000c8 b915                      				out PortB, common	
+0000c9 2f23                      				mov sys, digit0
+0000ca edec
+0000cb e0f1
+0000cc e000
+0000cd 0fe2
+0000ce 1ff0
+0000cf 95c8
+0000d0 2d20                      				Get_constant sys
+0000d1 b92b                      				out PortD, sys
+0000d2 d00d                      				rcall Delay_1ms				;ждем
                                  			      
-0000d1 e018                      				ldi common, 0b00001000		; cathode
-0000d2 b915                      				out PortB, common
-0000d3 2f24                      				mov sys, digit1
-0000d4 ede8
-0000d5 e0f1
-0000d6 e000
-0000d7 0fe2
-0000d8 1ff0
-0000d9 95c8
-0000da 2d20                      				Get_constant sys
-0000db b92b                      				out PortD, sys      
-0000dc d001                      				rcall Delay_1ms   
+0000d3 e018                      				ldi common, 0b00001000		; cathode
+0000d4 b915                      				out PortB, common
+0000d5 2f24                      				mov sys, digit1
+0000d6 edec
+0000d7 e0f1
+0000d8 e000
+0000d9 0fe2
+0000da 1ff0
+0000db 95c8
+0000dc 2d20                      				Get_constant sys
+0000dd b92b                      				out PortD, sys      
+0000de d001                      				rcall Delay_1ms   
                                  
-0000dd 9508                      				ret
+0000df 9508                      				ret
                                  
                                  
                                  ;*********************************************************
@@ -1339,31 +1343,31 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
                                  ; Delay 8 000 cycles
                                  ; 1ms at 8.0 MHz
                                  Delay_1ms:
-0000de e07b                          ldi  timerH, 11
-0000df e683                          ldi  timerL, 99
-0000e0 958a                      L1: dec  timerL
-0000e1 f7f1                          brne L1
-0000e2 957a                          dec  timerH
-0000e3 f7e1                          brne L1
-0000e4 9508                      	ret
+0000e0 e07b                          ldi  timerH, 11
+0000e1 e683                          ldi  timerL, 99
+0000e2 958a                      L1: dec  timerL
+0000e3 f7f1                          brne L1
+0000e4 957a                          dec  timerH
+0000e5 f7e1                          brne L1
+0000e6 9508                      	ret
                                  
                                  ; Delay 80 000 cycles
                                  ; 10ms at 8.0 MHz
                                  Delay_10ms:
-0000e5 e678                          ldi  timerH, 104
-0000e6 ee85                          ldi  timerL, 229
-0000e7 958a                      L10: dec  timerL
-0000e8 f7f1                          brne L10
-0000e9 957a                          dec  timerH
-0000ea f7e1                          brne L10
-0000eb 9508                      	ret
+0000e7 e678                          ldi  timerH, 104
+0000e8 ee85                          ldi  timerL, 229
+0000e9 958a                      L10: dec  timerL
+0000ea f7f1                          brne L10
+0000eb 957a                          dec  timerH
+0000ec f7e1                          brne L10
+0000ed 9508                      	ret
                                  
                                  //digits: .db 0b00000010, 0b10011110, 0b00100100, 0b00001100, 0b10011000, 0b01001000, 0b01000000, 0b00011110, 0b00000000, 0b00001000	//anod
                                  //digits: .db 0b10111111, 0b10000110, 0b11011011, 0b11001111, 0b11100110, 0b11101101, 0b11111101, 0b10000111, 0b11111111, 0b11101111		//cathod
-0000ec f9c0
-0000ed b0a4
-0000ee 9299
-0000ef f882
+0000ee f9c0
+0000ef b0a4
+0000f0 9299
+0000f1 f882
 
 
 RESOURCE USE INFORMATION
@@ -1383,7 +1387,7 @@ counted separately from r26..r31 here.
 "ATmega328P" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   5 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  49 r17:  20 r18:  32 r19:  11 r20:  12 
+r13:   0 r14:   0 r15:   0 r16:  49 r17:  22 r18:  32 r19:  11 r20:  12 
 r21:   5 r22:   0 r23:  16 r24:  16 r25:   6 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:  10 r31:  10 
 Registers used: 12 out of 35 (34.3%)
@@ -1399,9 +1403,9 @@ clc   :   0 clh   :   0 cli   :   2 cln   :   0 clr   :   0 cls   :   0
 clt   :   1 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   4 cpse  :   0 dec   :   4 eor   :  17 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   7 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :  40 lds   :   6 lpm   :  15 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  41 lds   :   6 lpm   :  15 lsl   :   0 
 lsr   :   0 mov   :  19 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  17 pop   :   0 
+neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  18 pop   :   0 
 push  :   0 rcall :  14 ret   :   7 reti  :   1 rjmp  :   7 rol   :   0 
 ror   :   0 sbc   :   3 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   1 sbrs  :   2 sec   :   0 seh   :   0 
@@ -1413,7 +1417,7 @@ Instructions used: 27 out of 113 (23.9%)
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0001e2    422     10    432   32768   1.3%
+[.cseg] 0x000000 0x0001e6    426     10    436   32768   1.3%
 [.dseg] 0x000100 0x000107      0      7      7    2048   0.3%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
