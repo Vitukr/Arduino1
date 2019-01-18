@@ -173,7 +173,7 @@ Main:
 				rcall Display 
 
 				;rjmp EndMain
-EndMain: ;===================================
+EndMain: ;================================================
 				rjmp Main
 ;=========================================================
 EXT_INT0:
@@ -466,10 +466,10 @@ Display:			; display digits time
 				showDigits1:
 				lds temp, RightButton 
 				cpi temp, 0
-				breq showMinutes
+				breq showHours
 
 				rjmp showSeconds
-				showMinutes:
+				showHours:
 				; Hours
 				eor digit0, digit0
 				eor digit1, digit1
@@ -527,6 +527,13 @@ Display:			; display digits time
 
 				; Minutes
 				showSeconds:
+				lds temp, RightButton 
+				cpi temp, 1
+				breq showMinutes
+
+				rjmp endDisplayDigits
+
+				showMinutes:
            
 				eor digit0, digit0
 				eor digit1, digit1

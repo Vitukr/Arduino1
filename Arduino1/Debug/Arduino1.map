@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Fri Jan 18 22:05:13 2019
+AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Fri Jan 18 23:20:01 2019
 
 
 EQU  SIGNATURE_000 0000001e
@@ -745,27 +745,28 @@ CSEG update_minute@TimerAddSecond@1315 000000dc
 CSEG update_hour@TimerAddSecond@1315 000000e1
 CSEG notictac@TimerAddSecond@1315 000000e3
 CSEG Display_test 000000f5
-CSEG Delay_1ms    00000270
+CSEG Delay_1ms    00000275
 CSEG NoBlink      00000102
 CSEG showDigits0  0000010c
 CSEG showDigits1  00000181
 CSEG loop_divide@GradeNumber@1436 00000113
 CSEG secondigit@GradeNumber@1436 00000118
-CSEG digitsG      0000027e
-CSEG digits       00000283
+CSEG digitsG      00000283
+CSEG digits       00000288
 CSEG loop_divide@GradeNumber@1549 0000014d
 CSEG secondigit@GradeNumber@1549 00000152
-CSEG endDisplayDigits 0000026f
-CSEG showMinutes  00000186
+CSEG endDisplayDigits 00000274
+CSEG showHours    00000186
 CSEG showSeconds  000001fb
 CSEG loop_divide@GradeNumber@1674 0000018d
 CSEG secondigit@GradeNumber@1674 00000192
 CSEG loop_divide@GradeNumber@1787 000001c7
 CSEG secondigit@GradeNumber@1787 000001cc
-CSEG loop_divide@GradeNumber@1905 00000202
-CSEG secondigit@GradeNumber@1905 00000207
-CSEG loop_divide@GradeNumber@2018 0000023c
-CSEG secondigit@GradeNumber@2018 00000241
-CSEG L1           00000272
-CSEG Delay_10ms   00000277
-CSEG L10          00000279
+CSEG showMinutes  00000200
+CSEG loop_divide@GradeNumber@1912 00000207
+CSEG secondigit@GradeNumber@1912 0000020c
+CSEG loop_divide@GradeNumber@2025 00000241
+CSEG secondigit@GradeNumber@2025 00000246
+CSEG L1           00000277
+CSEG Delay_10ms   0000027c
+CSEG L10          0000027e

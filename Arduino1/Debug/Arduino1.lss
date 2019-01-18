@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Fri Jan 18 22:05:13 2019
+AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Fri Jan 18 23:20:01 2019
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc'
@@ -1159,7 +1159,7 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 000042 d0c4                      				rcall Display 
                                  
                                  				;rjmp EndMain
-                                 EndMain: ;===================================
+                                 EndMain: ;================================================
 000043 cff9                      				rjmp Main
                                  ;=========================================================
                                  EXT_INT0:
@@ -1383,7 +1383,7 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 0000f7 b918                      				out PortC, common
 0000f8 e010                      				ldi common, 0b00000000		
 0000f9 b91b                      				out PortD, common
-0000fa d175                      				rcall Delay_1ms
+0000fa d17a                      				rcall Delay_1ms
                                  
 0000fb ff50                      				SBRS twoPoints, 0
 0000fc c005                      				rjmp NoBlink	
@@ -1400,7 +1400,7 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 0000fe b918                      				out PortC, common
 0000ff e010                      				ldi common, 0b00000000		
 000100 b91b                      				out PortD, common
-000101 d16e                      				rcall Delay_1ms
+000101 d173                      				rcall Delay_1ms
                                  
                                  				NoBlink:
 000102 e010                      				ldi common, 0b00000000		
@@ -1435,8 +1435,8 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 00011a e810                      				ldi common, 0b10000000		
 00011b b91b                      				out PortD, common	
 00011c 2f23                      				mov sys, digit0
-00011d e0f4
-00011e efec
+00011d e0f5
+00011e e0e6
 00011f 2f62
 000120 0fe6
 000121 e060
@@ -1446,20 +1446,20 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 000125 b92b                      				out PortD, sys
 000126 2f03                      				mov temp, digit0
 000127 e0f5
-000128 e0e6
+000128 e1e0
 000129 2f60
 00012a 0fe6
 00012b e060
 00012c 1ff6
 00012d 9104                      				Get_constant temp, digits
 00012e b905                      				out PortB, temp
-00012f d140                      				rcall Delay_1ms
+00012f d145                      				rcall Delay_1ms
                                  
 000130 e410                      				ldi common, 0b01000000		
 000131 b91b                      				out PortD, common
 000132 2f24                      				mov sys, digit1
-000133 e0f4
-000134 efec
+000133 e0f5
+000134 e0e6
 000135 2f62
 000136 0fe6
 000137 e060
@@ -1469,14 +1469,14 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 00013b b92b                      				out PortD, sys
 00013c 2f04                      				mov temp, digit1
 00013d e0f5
-00013e e0e6
+00013e e1e0
 00013f 2f60
 000140 0fe6
 000141 e060
 000142 1ff6
 000143 9104                      				Get_constant temp, digits
 000144 b905                      				out PortB, temp      
-000145 d12a                      				rcall Delay_1ms
+000145 d12f                      				rcall Delay_1ms
                                  
 000146 2733                      				eor digit0, digit0
 000147 2744                      				eor digit1, digit1
@@ -1495,8 +1495,8 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 000154 e210                      				ldi common, 0b00100000		
 000155 b91b                      				out PortD, common	
 000156 2f23                      				mov sys, digit0
-000157 e0f4
-000158 efec
+000157 e0f5
+000158 e0e6
 000159 2f62
 00015a 0fe6
 00015b e060
@@ -1506,20 +1506,20 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 00015f b92b                      				out PortD, sys
 000160 2f03                      				mov temp, digit0
 000161 e0f5
-000162 e0e6
+000162 e1e0
 000163 2f60
 000164 0fe6
 000165 e060
 000166 1ff6
 000167 9104                      				Get_constant temp, digits
 000168 b905                      				out PortB, temp
-000169 d106                      				rcall Delay_1ms				
+000169 d10b                      				rcall Delay_1ms				
                                  			      
 00016a e110                      				ldi common, 0b00010000		
 00016b b91b                      				out PortD, common
 00016c 2f24                      				mov sys, digit1
-00016d e0f4
-00016e efec
+00016d e0f5
+00016e e0e6
 00016f 2f62
 000170 0fe6
 000171 e060
@@ -1529,26 +1529,26 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 000175 b92b                      				out PortD, sys
 000176 2f04                      				mov temp, digit1
 000177 e0f5
-000178 e0e6
+000178 e1e0
 000179 2f60
 00017a 0fe6
 00017b e060
 00017c 1ff6
 00017d 9104                      				Get_constant temp, digits
 00017e b905                      				out PortB, temp      
-00017f d0f0                      				rcall Delay_1ms
+00017f d0f5                      				rcall Delay_1ms
                                  
                                  
-000180 c0ee                      				rjmp endDisplayDigits
+000180 c0f3                      				rjmp endDisplayDigits
                                  
                                  				;============================================================
                                  				showDigits1:
 000181 9100 0108                 				lds temp, RightButton 
 000183 3000                      				cpi temp, 0
-000184 f009                      				breq showMinutes
+000184 f009                      				breq showHours
                                  
 000185 c075                      				rjmp showSeconds
-                                 				showMinutes:
+                                 				showHours:
                                  				; Hours
 000186 2733                      				eor digit0, digit0
 000187 2744                      				eor digit1, digit1
@@ -1567,8 +1567,8 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 000194 e810                      				ldi common, 0b10000000		
 000195 b91b                      				out PortD, common	
 000196 2f23                      				mov sys, digit0
-000197 e0f4
-000198 efec
+000197 e0f5
+000198 e0e6
 000199 2f62
 00019a 0fe6
 00019b e060
@@ -1578,20 +1578,20 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 00019f b92b                      				out PortD, sys
 0001a0 2f03                      				mov temp, digit0
 0001a1 e0f5
-0001a2 e0e6
+0001a2 e1e0
 0001a3 2f60
 0001a4 0fe6
 0001a5 e060
 0001a6 1ff6
 0001a7 9104                      				Get_constant temp, digits
 0001a8 b905                      				out PortB, temp
-0001a9 d0c6                      				rcall Delay_1ms				
+0001a9 d0cb                      				rcall Delay_1ms				
                                  			      
 0001aa e410                      				ldi common, 0b01000000		
 0001ab b91b                      				out PortD, common
 0001ac 2f24                      				mov sys, digit1
-0001ad e0f4
-0001ae efec
+0001ad e0f5
+0001ae e0e6
 0001af 2f62
 0001b0 0fe6
 0001b1 e060
@@ -1601,14 +1601,14 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 0001b5 b92b                      				out PortD, sys
 0001b6 2f04                      				mov temp, digit1
 0001b7 e0f5
-0001b8 e0e6
+0001b8 e1e0
 0001b9 2f60
 0001ba 0fe6
 0001bb e060
 0001bc 1ff6
 0001bd 9104                      				Get_constant temp, digits
 0001be b905                      				out PortB, temp      
-0001bf d0b0                      				rcall Delay_1ms
+0001bf d0b5                      				rcall Delay_1ms
                                  
 0001c0 2733                      				eor digit0, digit0
 0001c1 2744                      				eor digit1, digit1
@@ -1627,8 +1627,8 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 0001ce e210                      				ldi common, 0b00100000		
 0001cf b91b                      				out PortD, common	
 0001d0 2f23                      				mov sys, digit0
-0001d1 e0f4
-0001d2 efec
+0001d1 e0f5
+0001d2 e0e6
 0001d3 2f62
 0001d4 0fe6
 0001d5 e060
@@ -1638,20 +1638,20 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 0001d9 b92b                      				out PortD, sys
 0001da 2f03                      				mov temp, digit0
 0001db e0f5
-0001dc e0e6
+0001dc e1e0
 0001dd 2f60
 0001de 0fe6
 0001df e060
 0001e0 1ff6
 0001e1 9104                      				Get_constant temp, digits
 0001e2 b905                      				out PortB, temp
-0001e3 d08c                      				rcall Delay_1ms				
+0001e3 d091                      				rcall Delay_1ms				
                                  			      
 0001e4 e110                      				ldi common, 0b00010000		
 0001e5 b91b                      				out PortD, common
 0001e6 2f24                      				mov sys, digit1
-0001e7 e0f4
-0001e8 efec
+0001e7 e0f5
+0001e8 e0e6
 0001e9 2f62
 0001ea 0fe6
 0001eb e060
@@ -1661,143 +1661,150 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
 0001ef b92b                      				out PortD, sys
 0001f0 2f04                      				mov temp, digit1
 0001f1 e0f5
-0001f2 e0e6
+0001f2 e1e0
 0001f3 2f60
 0001f4 0fe6
 0001f5 e060
 0001f6 1ff6
 0001f7 9104                      				Get_constant temp, digits
 0001f8 b905                      				out PortB, temp      
-0001f9 d076                      				rcall Delay_1ms   
+0001f9 d07b                      				rcall Delay_1ms   
                                  
-0001fa c074                      				rjmp endDisplayDigits
+0001fa c079                      				rjmp endDisplayDigits
                                  
                                  				; Minutes
                                  				showSeconds:
-                                            
-0001fb 2733                      				eor digit0, digit0
-0001fc 2744                      				eor digit1, digit1
-0001fd 9100 0105
-0001ff e02a
-000200 2777
-000201 2788
-000202 2f80
-000203 0b02
-000204 f010
-000205 9573
-000206 cffb
-000207 2f37
-000208 2f48                      				GradeNumber Minutes, digit0, digit1 
+0001fb 9100 0108                 				lds temp, RightButton 
+0001fd 3001                      				cpi temp, 1
+0001fe f009                      				breq showMinutes
                                  
-000209 e810                      				ldi common, 0b10000000		
-00020a b91b                      				out PortD, common	
-00020b 2f23                      				mov sys, digit0
-00020c e0f4
-00020d efec
-00020e 2f62
-00020f 0fe6
-000210 e060
-000211 1ff6
-000212 9124                      				Get_constant sys, digitsG
-000213 2b21                      				or sys, common
-000214 b92b                      				out PortD, sys
-000215 2f03                      				mov temp, digit0
-000216 e0f5
-000217 e0e6
-000218 2f60
-000219 0fe6
-00021a e060
-00021b 1ff6
-00021c 9104                      				Get_constant temp, digits
-00021d b905                      				out PortB, temp
-00021e d051                      				rcall Delay_1ms				
+0001ff c074                      				rjmp endDisplayDigits
+                                 
+                                 				showMinutes:
+                                            
+000200 2733                      				eor digit0, digit0
+000201 2744                      				eor digit1, digit1
+000202 9100 0105
+000204 e02a
+000205 2777
+000206 2788
+000207 2f80
+000208 0b02
+000209 f010
+00020a 9573
+00020b cffb
+00020c 2f37
+00020d 2f48                      				GradeNumber Minutes, digit0, digit1 
+                                 
+00020e e810                      				ldi common, 0b10000000		
+00020f b91b                      				out PortD, common	
+000210 2f23                      				mov sys, digit0
+000211 e0f5
+000212 e0e6
+000213 2f62
+000214 0fe6
+000215 e060
+000216 1ff6
+000217 9124                      				Get_constant sys, digitsG
+000218 2b21                      				or sys, common
+000219 b92b                      				out PortD, sys
+00021a 2f03                      				mov temp, digit0
+00021b e0f5
+00021c e1e0
+00021d 2f60
+00021e 0fe6
+00021f e060
+000220 1ff6
+000221 9104                      				Get_constant temp, digits
+000222 b905                      				out PortB, temp
+000223 d051                      				rcall Delay_1ms				
                                  			      
-00021f e410                      				ldi common, 0b01000000		
-000220 b91b                      				out PortD, common
-000221 2f24                      				mov sys, digit1
-000222 e0f4
-000223 efec
-000224 2f62
-000225 0fe6
-000226 e060
-000227 1ff6
-000228 9124                      				Get_constant sys, digitsG
-000229 2b21                      				or sys, common
-00022a b92b                      				out PortD, sys
-00022b 2f04                      				mov temp, digit1
-00022c e0f5
-00022d e0e6
-00022e 2f60
-00022f 0fe6
-000230 e060
-000231 1ff6
-000232 9104                      				Get_constant temp, digits
-000233 b905                      				out PortB, temp      
-000234 d03b                      				rcall Delay_1ms    			  
+000224 e410                      				ldi common, 0b01000000		
+000225 b91b                      				out PortD, common
+000226 2f24                      				mov sys, digit1
+000227 e0f5
+000228 e0e6
+000229 2f62
+00022a 0fe6
+00022b e060
+00022c 1ff6
+00022d 9124                      				Get_constant sys, digitsG
+00022e 2b21                      				or sys, common
+00022f b92b                      				out PortD, sys
+000230 2f04                      				mov temp, digit1
+000231 e0f5
+000232 e1e0
+000233 2f60
+000234 0fe6
+000235 e060
+000236 1ff6
+000237 9104                      				Get_constant temp, digits
+000238 b905                      				out PortB, temp      
+000239 d03b                      				rcall Delay_1ms    			  
                                  			   
-000235 2733                      				eor digit0, digit0
-000236 2744                      				eor digit1, digit1
-000237 9100 0104
-000239 e02a
-00023a 2777
-00023b 2788
-00023c 2f80
-00023d 0b02
-00023e f010
-00023f 9573
-000240 cffb
-000241 2f37
-000242 2f48                      				GradeNumber Seconds, digit0, digit1  
+00023a 2733                      				eor digit0, digit0
+00023b 2744                      				eor digit1, digit1
+00023c 9100 0104
+00023e e02a
+00023f 2777
+000240 2788
+000241 2f80
+000242 0b02
+000243 f010
+000244 9573
+000245 cffb
+000246 2f37
+000247 2f48                      				GradeNumber Seconds, digit0, digit1  
                                  			    
-000243 e210                      				ldi common, 0b00100000		
-000244 b91b                      				out PortD, common	
-000245 2f23                      				mov sys, digit0
-000246 e0f4
-000247 efec
-000248 2f62
-000249 0fe6
-00024a e060
-00024b 1ff6
-00024c 9124                      				Get_constant sys, digitsG
-00024d 2b21                      				or sys, common
-00024e b92b                      				out PortD, sys
-00024f 2f03                      				mov temp, digit0
-000250 e0f5
-000251 e0e6
-000252 2f60
-000253 0fe6
-000254 e060
-000255 1ff6
-000256 9104                      				Get_constant temp, digits
-000257 b905                      				out PortB, temp
-000258 d017                      				rcall Delay_1ms				
+000248 e210                      				ldi common, 0b00100000		
+000249 b91b                      				out PortD, common	
+00024a 2f23                      				mov sys, digit0
+00024b e0f5
+00024c e0e6
+00024d 2f62
+00024e 0fe6
+00024f e060
+000250 1ff6
+000251 9124                      				Get_constant sys, digitsG
+000252 2b21                      				or sys, common
+000253 b92b                      				out PortD, sys
+000254 2f03                      				mov temp, digit0
+000255 e0f5
+000256 e1e0
+000257 2f60
+000258 0fe6
+000259 e060
+00025a 1ff6
+00025b 9104                      				Get_constant temp, digits
+00025c b905                      				out PortB, temp
+00025d d017                      				rcall Delay_1ms				
                                  			      
-000259 e110                      				ldi common, 0b00010000		
-00025a b91b                      				out PortD, common
-00025b 2f24                      				mov sys, digit1
-00025c e0f4
-00025d efec
-00025e 2f62
-00025f 0fe6
-000260 e060
-000261 1ff6
-000262 9124                      				Get_constant sys, digitsG
-000263 2b21                      				or sys, common
-000264 b92b                      				out PortD, sys
-000265 2f04                      				mov temp, digit1
-000266 e0f5
-000267 e0e6
-000268 2f60
-000269 0fe6
-00026a e060
-00026b 1ff6
-00026c 9104                      				Get_constant temp, digits
-00026d b905                      				out PortB, temp      
-00026e d001                      				rcall Delay_1ms   
+00025e e110                      				ldi common, 0b00010000		
+00025f b91b                      				out PortD, common
+000260 2f24                      				mov sys, digit1
+000261 e0f5
+000262 e0e6
+000263 2f62
+000264 0fe6
+000265 e060
+000266 1ff6
+000267 9124                      				Get_constant sys, digitsG
+000268 2b21                      				or sys, common
+000269 b92b                      				out PortD, sys
+00026a 2f04                      				mov temp, digit1
+00026b e0f5
+00026c e1e0
+00026d 2f60
+00026e 0fe6
+00026f e060
+000270 1ff6
+000271 9104                      				Get_constant temp, digits
+000272 b905                      				out PortB, temp      
+000273 d001                      				rcall Delay_1ms   
                                  
                                  				endDisplayDigits:
                                  
-00026f 9508                      				ret
+000274 9508                      				ret
                                  
                                  
                                  ;*********************************************************
@@ -1805,37 +1812,37 @@ AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm 
                                  ; Delay 8 000 cycles
                                  ; 1ms at 8.0 MHz
                                  Delay_1ms:
-000270 e07b                          ldi  timerH, 11
-000271 e683                          ldi  timerL, 99
-000272 958a                      L1: dec  timerL
-000273 f7f1                          brne L1
-000274 957a                          dec  timerH
-000275 f7e1                          brne L1
-000276 9508                      	ret
+000275 e07b                          ldi  timerH, 11
+000276 e683                          ldi  timerL, 99
+000277 958a                      L1: dec  timerL
+000278 f7f1                          brne L1
+000279 957a                          dec  timerH
+00027a f7e1                          brne L1
+00027b 9508                      	ret
                                  
                                  ; Delay 80 000 cycles
                                  ; 10ms at 8.0 MHz
                                  Delay_10ms:
-000277 e678                          ldi  timerH, 104
-000278 ee85                          ldi  timerL, 229
-000279 958a                      L10: dec  timerL
-00027a f7f1                          brne L10
-00027b 957a                          dec  timerH
-00027c f7e1                          brne L10
-00027d 9508                      	ret
+00027c e678                          ldi  timerH, 104
+00027d ee85                          ldi  timerL, 229
+00027e 958a                      L10: dec  timerL
+00027f f7f1                          brne L10
+000280 957a                          dec  timerH
+000281 f7e1                          brne L10
+000282 9508                      	ret
                                  
                                  //digits: .db 0b00000010, 0b10011110, 0b00100100, 0b00001100, 0b10011000, 0b01001000, 0b01000000, 0b00011110, 0b00000000, 0b00001000	//anod
                                  //digits: .db 0b10111111, 0b10000110, 0b11011011, 0b11001111, 0b11100110, 0b11101101, 0b11111101, 0b10000111, 0b11111111, 0b11101111		//cathod
                                  //digits: .db 0b11000000, 0b111111001, 0b10100100, 0b10110000, 0b10011001, 0b10010010, 0b10000010, 0b11111000, 0b10000000, 0b10010000		// anod arduino
-00027e 0202
-00027f 0000
-000280 0000
-000281 0200
-000282 0000                      digitsG: .db 0b00000010, 0b00000010, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000010, 0b00000000, 0b00000000	; PD1
-000283 2700
-000284 0309
-000285 1226
-000286 0710
+000283 0202
+000284 0000
+000285 0000
+000286 0200
+000287 0000                      digitsG: .db 0b00000010, 0b00000010, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000010, 0b00000000, 0b00000000	; PD1
+000288 2700
+000289 0309
+00028a 1226
+00028b 0710
 
 
 RESOURCE USE INFORMATION
@@ -1855,7 +1862,7 @@ counted separately from r26..r31 here.
 "ATmega328P" register use summary:
 x  :   0 y  :   0 z  :  24 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16: 124 r17:  94 r18:  93 r19:  30 r20:  30 
+r13:   0 r14:   0 r15:   0 r16: 126 r17:  94 r18:  93 r19:  30 r20:  30 
 r21:   5 r22:  96 r23:  28 r24:  28 r25:   6 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:  48 r31:  48 
 Registers used: 13 out of 35 (37.1%)
@@ -1863,18 +1870,18 @@ Registers used: 13 out of 35 (37.1%)
 "ATmega328P" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :  24 add   :  24 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   1 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   6 break :   0 breq  :   4 brge  :   0 brhc  :   0 
+brcc  :   0 brcs  :   6 break :   0 breq  :   5 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
 brne  :  19 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   1 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   2 cln   :   0 clr   :   0 cls   :   0 
 clt   :   1 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :  19 cpse  :   0 dec   :   5 eor   :  35 fmul  :   0 fmuls :   0 
+cpi   :  20 cpse  :   0 dec   :   5 eor   :  35 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :  15 jmp   :   2 
-ld    :   0 ldd   :   0 ldi   : 120 lds   :  20 lpm   :  48 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   : 120 lds   :  21 lpm   :  48 lsl   :   0 
 lsr   :   0 mov   :  66 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   0 or    :  12 ori   :   0 out   :  48 pop   :   0 
-push  :   0 rcall :  23 ret   :  10 reti  :   3 rjmp  :  19 rol   :   0 
+push  :   0 rcall :  23 ret   :  10 reti  :   3 rjmp  :  20 rol   :   0 
 ror   :   0 sbc   :   6 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   1 sbrs  :   2 sec   :   0 seh   :   0 
 sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   1 sev   :   0 
@@ -1885,7 +1892,7 @@ Instructions used: 30 out of 113 (26.5%)
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000510   1234     20   1254   32768   3.8%
+[.cseg] 0x000000 0x00051a   1244     20   1264   32768   3.9%
 [.dseg] 0x000100 0x00010f      0     15     15    2048   0.7%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

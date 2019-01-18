@@ -58,17 +58,18 @@
   <exitMenu3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>281</LINE></exitMenu3>
   <Continue><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>336</LINE></Continue>
   <Display_test><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>349</LINE></Display_test>
-  <Delay_1ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>592</LINE></Delay_1ms>
+  <Delay_1ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>599</LINE></Delay_1ms>
   <NoBlink><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>394</LINE></NoBlink>
   <showDigits0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>409</LINE></showDigits0>
   <showDigits1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>466</LINE></showDigits1>
-  <digitsG><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>615</LINE></digitsG>
-  <digits><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>616</LINE></digits>
-  <endDisplayDigits><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>583</LINE></endDisplayDigits>
-  <showMinutes><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>472</LINE></showMinutes>
+  <digitsG><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>622</LINE></digitsG>
+  <digits><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>623</LINE></digits>
+  <endDisplayDigits><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>590</LINE></endDisplayDigits>
+  <showHours><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>472</LINE></showHours>
   <showSeconds><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>529</LINE></showSeconds>
-  <L1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>595</LINE></L1>
-  <Delay_10ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>603</LINE></Delay_10ms>
-  <L10><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>606</LINE></L10>
+  <showMinutes><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>536</LINE></showMinutes>
+  <L1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>602</LINE></L1>
+  <Delay_10ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>610</LINE></Delay_10ms>
+  <L10><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>613</LINE></L10>
  </LABELS>
 </ASSEMBLER_INFO>
