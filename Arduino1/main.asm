@@ -14,6 +14,7 @@
 	.def digit0 = r19
 	.def digit1 = r20
 	.def twoPoints = r21
+	.def inMacro = r22
 	.def timerH = r23
 	.def timerL = r24
 	.def halfSecond = r25
@@ -29,12 +30,13 @@ Minutes:			.byte 1
 Hours:				.byte 1
 ;=================================================================
 .cseg
-.org 0
-rjmp Reset
-.org 0x001A
-rjmp TIM1_OVF
-
-
+.org 0 rjmp Reset
+.org 0x0002 jmp EXT_INT0 ; IRQ0 Handler
+.org 0x0004 jmp EXT_INT1 ; IRQ1 Handler
+//.org 0x0006 jmp PCINT0 ; PCINT0 Handler
+//.org 0x0008 jmp PCINT1_INT ; PCINT1 Handler
+//.org 0x000A jmp PCINT2 ; PCINT2 Handler
+.org 0x001A rjmp TIM1_OVF
 
 .macro SwapBitInRegister  ; Using T flag swap bit: @0 = Rd, @1 = bit index				
 				bst @0, @1 ; Store bit @1 of temp in T Flag
@@ -92,20 +94,30 @@ mov @1, timerH
 mov @2, timerL
 .endmacro
 
-.macro Get_constant // @0 register
-ldi ZL,Low(digits<<1)   ;инициализаци€ массива
-ldi ZH,High(digits<<1)
+.macro Get_constant // @0 register - number, @1 digits - display number address
+ldi ZH,High(@1<<1)
+ldi ZL,Low(@1<<1)   ;инициализаци€ массива
 
-ldi temp, 0             ;прибавление переменной
+mov inMacro, @0
+;add inMacro, Low(@1<<1)
+
+/*clr r31      ; ќчистить старший байт Z
+ldi r30, Low(@1<<1) ; ”становить младший байт Z*/
+
+add ZL, inMacro            ;к 0-му адресу массива
+ldi inMacro, 0 
+adc ZH, inMacro
+
+/*ldi temp, 0             ;прибавление переменной
 add ZL, @0            ;к 0-му адресу массива
-adc ZH, temp
+adc ZH, temp*/
 
-lpm                     ;загрузка значени€
-mov @0, r0
+lpm @0, Z                    ;загрузка значени€
+/*lpm
+mov @0, r0*/
 .endmacro
 
 Reset: // ѕредустановки
-
 				ldi temp, high(RAMEND) // »нициализируем стек
 				out sph, temp
 				ldi temp, low(RAMEND)
@@ -133,8 +145,9 @@ Reset: // ѕредустановки
 				
 				rcall Init_TIMER1
 				rcall Init_PORTS
+				rcall Init_Ext_Interups
 
-				ldi common, 0b00000011		; cathode
+				ldi common, 0b00000110		
 				out PortC, common
 
 				eor halfSecond, halfSecond
@@ -151,24 +164,67 @@ Main:
 EndMain:
 				rjmp Main
 
+EXT_INT0:
+//cli
+ldi temp, 0b00000000
+sts TCCR1B, temp
+//sei
+reti
+
+EXT_INT1:
+//cli
+ldi temp, 0b00000100
+sts TCCR1B, temp
+//sei
+reti
+
+;========================
+/*PCINT1_INT:
+cli
+
+in temp, PINC
+SBRC temp, 5
+rjmp skip_work
+do_work:
+lds temp, Seconds
+eor temp, temp
+sts Seconds, temp
+ldi temp, 0b00000000
+sts TCCR1B, temp
+
+skip_work:
+sei
+reti*/
+;========================
 
 Init_TIMER1:
 				ldi temp, 0b00000100
 				sts TCCR1B, temp
 				ldi temp, 0b00000001
 				sts TIMSK1, temp
-				ldi temp, 0b00000001
-				sts TIFR1, temp
 				rcall Timer_restart
 				ret
 
 Init_PORTS:
-				ldi temp, 0b11111111
+				ldi temp, 0b00111111
 				out DDRB, temp
-				ldi temp, 0b11111111
+				ldi temp, 0b11110011	; bits 2 and 3 buttons input
 				out DDRD, temp
-				ldi temp, 0b00000011
+				ldi temp, 0b00111111
 				out DDRC, temp
+				ret
+
+Init_Ext_Interups:
+				/*ldi temp, 0b00000010
+				sts PCICR, temp
+				ldi temp, 0b00111000
+				sts PCMSK1, temp*/
+				ldi temp, 0b00001010
+				sts EICRA, temp
+				ldi temp, 0b00000011
+				out EIMSK, temp
+				ret
+
 
 TIM1_OVF:		; 0.5 second
 				cli
@@ -192,24 +248,19 @@ Timer_restart:			; D9DE 0.5 sec in 20Mhz
 
 ;*********************************************************
 Display_test:
-				eor digit0, digit0
-				eor digit1, digit1
-				GradeNumber Seconds, digit0, digit1 
-
-				ldi common, 0b00011000		; cathode
-				out PortB, common
-				mov sys, digit1
-				Get_constant sys
-				out PortD, sys      
-				rcall Delay_1ms 
-ret
+				/*ldi common, 0b00100000		; cathode
+				out PortB, common     
+				rcall Delay_1ms */
+				ret
 ;*********************************************************
 DisplayTwoPoints:
 				/*cpi twoPoints, 0
 				breq NoBlink*/	
 
+				ldi common, 0b00100000		
+				out PortC, common
 				ldi common, 0b00000000		
-				out PortB, common
+				out PortD, common
 				rcall Delay_1ms
 
 				SBRS twoPoints, 0
@@ -223,8 +274,8 @@ DisplayTwoPoints:
 				rcall Delay_1ms*/
 
 				; two dots
-				ldi common, 0b00010000		
-				out PortB, common
+				ldi common, 0b00000000		
+				out PortC, common
 				rcall Delay_1ms
 				NoBlink:
 				ret
@@ -235,36 +286,52 @@ Display:			; display digits time
 				eor digit1, digit1
 				GradeNumber Minutes, digit0, digit1 
 
-				ldi common, 0b00000001		; cathode
-				out PortB, common	
+				ldi common, 0b10000000		
+				out PortD, common	
 				mov sys, digit0
-				Get_constant sys
+				Get_constant sys, digitsG
+				or sys, common
 				out PortD, sys
-				rcall Delay_1ms				;ждем
+				mov temp, digit0
+				Get_constant temp, digits
+				out PortB, temp
+				rcall Delay_1ms				
 			      
-				ldi common, 0b00000010		; cathode
-				out PortB, common
+				ldi common, 0b01000000		
+				out PortD, common
 				mov sys, digit1
-				Get_constant sys
-				out PortD, sys      
-				rcall Delay_1ms   			  
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit1
+				Get_constant temp, digits
+				out PortB, temp      
+				rcall Delay_1ms    			  
 			   
 				eor digit0, digit0
 				eor digit1, digit1
 				GradeNumber Seconds, digit0, digit1  
 			    
-				ldi common, 0b00000100		; cathode
-				out PortB, common	
+				ldi common, 0b00100000		
+				out PortD, common	
 				mov sys, digit0
-				Get_constant sys
+				Get_constant sys, digitsG
+				or sys, common
 				out PortD, sys
-				rcall Delay_1ms				;ждем
+				mov temp, digit0
+				Get_constant temp, digits
+				out PortB, temp
+				rcall Delay_1ms				
 			      
-				ldi common, 0b00001000		; cathode
-				out PortB, common
+				ldi common, 0b00010000		
+				out PortD, common
 				mov sys, digit1
-				Get_constant sys
-				out PortD, sys      
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit1
+				Get_constant temp, digits
+				out PortB, temp      
 				rcall Delay_1ms   
 
 				ret
@@ -296,4 +363,6 @@ L10: dec  timerL
 
 //digits: .db 0b00000010, 0b10011110, 0b00100100, 0b00001100, 0b10011000, 0b01001000, 0b01000000, 0b00011110, 0b00000000, 0b00001000	//anod
 //digits: .db 0b10111111, 0b10000110, 0b11011011, 0b11001111, 0b11100110, 0b11101101, 0b11111101, 0b10000111, 0b11111111, 0b11101111		//cathod
-digits: .db 0b11000000, 0b111111001, 0b10100100, 0b10110000, 0b10011001, 0b10010010, 0b10000010, 0b11111000, 0b10000000, 0b10010000		// anod arduino
+//digits: .db 0b11000000, 0b111111001, 0b10100100, 0b10110000, 0b10011001, 0b10010010, 0b10000010, 0b11111000, 0b10000000, 0b10010000		// anod arduino
+digitsG: .db 0b00000010, 0b00000010, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000010, 0b00000000, 0b00000000	; PD1
+digits: .db 0b000000, 0b100111, 0b001001, 0b000011, 0b100110, 0b010010, 0b010000, 0b000111, 0b000000, 0b000010	; PB5-0
