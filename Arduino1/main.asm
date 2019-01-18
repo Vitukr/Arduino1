@@ -28,6 +28,11 @@ buttons:			.byte 3
 Seconds:			.byte 1
 Minutes:			.byte 1
 Hours:				.byte 1
+LeftButton:			.byte 1
+RightButton:		.byte 4
+CurrentRightButton: .byte 1
+Seconds5:			.byte 1
+TicTac:				.byte 1
 ;=================================================================
 .cseg
 .org 0 rjmp Reset
@@ -48,6 +53,10 @@ Hours:				.byte 1
 .endmacro
 
 .macro TimerAddSecond
+lds temp, TicTac
+cpi temp, 0
+breq notictac
+
 lds temp, Seconds
 lds common, Minutes
 lds sys, Hours
@@ -76,6 +85,8 @@ eor sys, sys
 
 update_hour:
 sts Hours, sys
+
+notictac:
 .endmacro
 
 .macro GradeNumber // @0 - data_segment (Second), @1 - low_digit, @2 - high_digit data_segment
@@ -124,19 +135,16 @@ Reset: // ѕредустановки
 				out spl, temp  
 				cli
 
-				// test
-				/*ldi temp, 2
-				ldi ZL,Low(digits*2)   ;инициализаци€ массива
-				ldi ZH,High(digits*2)
-
-				ldi sys, 0             ;прибавление переменной
-				add ZL, temp            ;к 0-му адресу массива
-				adc ZH, sys
-
-				lpm sys, z                    ;загрузка значени€
-				mov temp, sys
-				mov sys, temp*/
-				// end test
+				eor temp, temp
+				sts LeftButton, temp
+				sts RightButton, temp
+				;ldi temp, 1
+				sts RightButton + 1, temp
+				sts RightButton + 2, temp
+				sts RightButton + 3, temp
+				sts CurrentRightButton, temp
+				ldi temp, 5
+				sts Seconds5, temp
 
 				ldi temp, 0
 				sts Seconds, temp
@@ -147,8 +155,8 @@ Reset: // ѕредустановки
 				rcall Init_PORTS
 				rcall Init_Ext_Interups
 
-				ldi common, 0b00000110		
-				out PortC, common
+				/*ldi common, 0b00000110		
+				out PortC, common*/
 
 				eor halfSecond, halfSecond
 				
@@ -158,43 +166,126 @@ Reset: // ѕредустановки
 ;MAIN 0x00D
 ;*********************************************************
 Main:   
-				//rcall Display_test
+				lds common, RightButton
+				cpi common, 2
+				breq EndMain
 				rcall DisplayTwoPoints
-				rcall Display        ;цикл индикации
-EndMain:
-				rjmp Main
+				rcall Display 
 
+				;rjmp EndMain
+EndMain: ;===================================
+				rjmp Main
+;=========================================================
 EXT_INT0:
-//cli
-ldi temp, 0b00000000
-sts TCCR1B, temp
-//sei
+
+lds sys, LeftButton
+inc sys
+cpi sys, 4
+brne exitInt0
+eor sys, sys
+
+exitInt0:
+sts LeftButton, sys 
+ldi temp, 0
+sts CurrentRightButton, temp
+; event
+ldi sys, 2
+sts Seconds5, sys
 reti
 
+;=====================================================
 EXT_INT1:
-//cli
-ldi temp, 0b00000100
-sts TCCR1B, temp
-//sei
+rcall MenuL
+; event
+ldi sys, 1
+sts Seconds5, sys
 reti
 
 ;========================
-/*PCINT1_INT:
-cli
+MenuL:
+lds sys, LeftButton
 
-in temp, PINC
-SBRC temp, 5
-rjmp skip_work
-do_work:
-lds temp, Seconds
-eor temp, temp
-sts Seconds, temp
-ldi temp, 0b00000000
-sts TCCR1B, temp
+cpi sys, 0
+brne menu1
+; 0 display h:m, m:s, temperature, turn off display
+lds common, RightButton + 0
+inc common
+sts RightButton + 0, common
+sts CurrentRightButton, common
+cpi common, 3
+brne exitMenu0
+eor common, common
+sts RightButton + 0, common
+sts CurrentRightButton, common
 
-skip_work:
-sei
-reti*/
+exitMenu0:
+rjmp exitMenu
+
+menu1:
+cpi sys, 1
+brne menu2
+; 1 stop/start waytch
+lds common, RightButton + 1
+inc common
+sts RightButton + 1, common
+sts CurrentRightButton, common
+cpi common, 2
+brne exitMenu1
+eor common, common
+sts RightButton + 1, common
+sts CurrentRightButton, common
+
+exitMenu1:
+cpi common, 0
+brne turnOnClock
+; stop clock
+ldi temp, 0
+sts TicTac, temp
+rjmp exitMenu
+turnOnClock: ; continue clock
+ldi temp, 1
+sts TicTac, temp
+rjmp exitMenu
+
+menu2:
+cpi sys, 2
+brne menu3
+; 2 assign hours
+ldi common, 0
+sts CurrentRightButton, common
+sts RightButton + 2, common
+lds common, Hours
+inc common
+sts Hours, common
+cpi common, 24
+brne exitMenu2
+eor common, common
+
+exitMenu2:
+sts Hours, common
+rjmp exitMenu
+
+menu3:
+cpi sys, 3
+brne menu4
+; 3 assign minutes
+ldi common, 0
+sts CurrentRightButton, common
+sts RightButton + 3, common
+lds common, Minutes
+inc common
+cpi common, 60
+brne exitMenu3
+eor common, common
+
+exitMenu3:
+sts Minutes, common
+rjmp exitMenu
+
+menu4:
+exitMenu:
+ret
+
 ;========================
 
 Init_TIMER1:
@@ -232,8 +323,16 @@ TIM1_OVF:		; 0.5 second
 				inc halfSecond
 				cpi halfSecond, 2
 				brne Continue
+				; ========== 1 sec ============
 				TimerAddSecond
 				eor halfSecond, halfSecond
+
+				lds temp, Seconds5
+				cpi temp, 0
+				breq Continue
+				dec temp
+				sts Seconds5, temp
+				; =============================
 				Continue:
 				rcall Timer_restart
 				sei
@@ -253,11 +352,23 @@ Display_test:
 				rcall Delay_1ms */
 				ret
 ;*********************************************************
+/*DisplayAll:
+lds temp, Seconds5
+cpi temp, 5
+breq displayLeftButton
+
+rjmp exitDisplayAll
+displayLeftButton:
+
+exitDisplayAll:
+ret*/
+
+;==========================================================
 DisplayTwoPoints:
 				/*cpi twoPoints, 0
 				breq NoBlink*/	
 
-				ldi common, 0b00100000		
+				ldi common, 0b00000000		
 				out PortC, common
 				ldi common, 0b00000000		
 				out PortD, common
@@ -274,13 +385,148 @@ DisplayTwoPoints:
 				rcall Delay_1ms*/
 
 				; two dots
+				ldi common, 0b00100000		
+				out PortC, common
+				ldi common, 0b00000000		
+				out PortD, common
+				rcall Delay_1ms
+
+				NoBlink:
 				ldi common, 0b00000000		
 				out PortC, common
-				rcall Delay_1ms
-				NoBlink:
+				ldi common, 0b00000000		
+				out PortD, common
+
 				ret
 
 Display:			; display digits time
+
+				lds temp, Seconds5
+				cpi temp, 0
+				brne showDigits0
+				rjmp showDigits1
+
+				showDigits0:
+				eor digit0, digit0
+				eor digit1, digit1
+				GradeNumber LeftButton, digit0, digit1 
+
+				ldi common, 0b10000000		
+				out PortD, common	
+				mov sys, digit0
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit0
+				Get_constant temp, digits
+				out PortB, temp
+				rcall Delay_1ms
+
+				ldi common, 0b01000000		
+				out PortD, common
+				mov sys, digit1
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit1
+				Get_constant temp, digits
+				out PortB, temp      
+				rcall Delay_1ms
+
+				eor digit0, digit0
+				eor digit1, digit1
+				GradeNumber CurrentRightButton, digit0, digit1 
+
+				ldi common, 0b00100000		
+				out PortD, common	
+				mov sys, digit0
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit0
+				Get_constant temp, digits
+				out PortB, temp
+				rcall Delay_1ms				
+			      
+				ldi common, 0b00010000		
+				out PortD, common
+				mov sys, digit1
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit1
+				Get_constant temp, digits
+				out PortB, temp      
+				rcall Delay_1ms
+
+
+				rjmp endDisplayDigits
+
+				;============================================================
+				showDigits1:
+				lds temp, RightButton 
+				cpi temp, 0
+				breq showMinutes
+
+				rjmp showSeconds
+				showMinutes:
+				; Hours
+				eor digit0, digit0
+				eor digit1, digit1
+				GradeNumber Hours, digit0, digit1
+
+				ldi common, 0b10000000		
+				out PortD, common	
+				mov sys, digit0
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit0
+				Get_constant temp, digits
+				out PortB, temp
+				rcall Delay_1ms				
+			      
+				ldi common, 0b01000000		
+				out PortD, common
+				mov sys, digit1
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit1
+				Get_constant temp, digits
+				out PortB, temp      
+				rcall Delay_1ms
+
+				eor digit0, digit0
+				eor digit1, digit1
+				GradeNumber Minutes, digit0, digit1  
+			    
+				ldi common, 0b00100000		
+				out PortD, common	
+				mov sys, digit0
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit0
+				Get_constant temp, digits
+				out PortB, temp
+				rcall Delay_1ms				
+			      
+				ldi common, 0b00010000		
+				out PortD, common
+				mov sys, digit1
+				Get_constant sys, digitsG
+				or sys, common
+				out PortD, sys
+				mov temp, digit1
+				Get_constant temp, digits
+				out PortB, temp      
+				rcall Delay_1ms   
+
+				rjmp endDisplayDigits
+
+				; Minutes
+				showSeconds:
            
 				eor digit0, digit0
 				eor digit1, digit1
@@ -333,6 +579,8 @@ Display:			; display digits time
 				Get_constant temp, digits
 				out PortB, temp      
 				rcall Delay_1ms   
+
+				endDisplayDigits:
 
 				ret
 
