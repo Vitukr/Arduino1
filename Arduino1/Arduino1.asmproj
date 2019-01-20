@@ -136,7 +136,7 @@
     <Compile Include="Menu.inc">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="temp.inc">
+    <Compile Include="Temperature.inc">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

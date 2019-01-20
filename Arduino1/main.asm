@@ -34,6 +34,8 @@ RightButton:		.byte 4
 CurrentRightButton: .byte 1
 Seconds5:			.byte 1
 TicTac:				.byte 1
+DS:					.byte 1
+Temperature:		.byte 1
 ;=================================================================
 .cseg
 .org 0 rjmp Reset
@@ -44,7 +46,13 @@ TicTac:				.byte 1
 //.org 0x000A jmp PCINT2 ; PCINT2 Handler
 .org 0x001A rjmp TIM1_OVF
 
+.equ OneWire = 4 ; PortC bit = 4
+
+#include "Delays.inc"
+
 #include "Macros.inc"
+
+#include "Temperature.inc"
 
 Reset: // Предустановки
 				ldi temp, high(RAMEND) // Инициализируем стек
@@ -73,9 +81,41 @@ Reset: // Предустановки
 				rcall Init_PORTS
 				rcall Init_Ext_Interups
 
-				/*ldi common, 0b00000110		
-				out PortC, common*/
+				OneWireReset
+				lds temp, DS
+				cpi temp, 1
+				breq yesDS
+				rjmp NoDS
+				; DS
+				yesDS:
+				ldi temp, 1
+				sts LeftButton, temp
 
+				ldi common, $CC
+				OneWireWrite common
+				ldi common, $44
+				OneWireWrite common
+				;rcall Delay_480ms
+
+				OneWireReset
+
+				ldi common, $CC
+				OneWireWrite common
+				ldi common, $BE
+				OneWireWrite common
+
+				OneWireRead common
+				sts Temperature, common
+				sts Hours, common
+				OneWireRead common
+				sts Temperature + 1, common
+				sts Minutes, common
+
+				OneWireReset
+
+				; NoDS
+				NoDS:
+				
 				eor halfSecond, halfSecond
 				
 				rcall Timer_restart
@@ -118,7 +158,7 @@ Timer_restart:			; 0.5 sec
 
 #include "Display.inc"
 
-#include "Delays.inc"
+
 
 #include "Constants.inc"
 ;========================*/
