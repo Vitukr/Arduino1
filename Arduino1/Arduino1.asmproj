@@ -112,7 +112,31 @@
     <Compile Include="AsmFile1.asm">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Constants.inc">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Delays.inc">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Display.inc">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Init.inc">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interupts.inc">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Macros.inc">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="main.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Menu.inc">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="temp.inc">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
