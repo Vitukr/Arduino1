@@ -16,7 +16,7 @@ lds common, RightButton + 0
 inc common
 sts RightButton + 0, common
 sts CurrentRightButton, common
-cpi common, 3
+cpi common, 4
 brne exitMenu0
 eor common, common
 sts RightButton + 0, common
@@ -87,6 +87,30 @@ sts Minutes, common
 rjmp exitMenu
 
 menu4:
+cpi sys, 4
+brne menu5
+; 4 show temperature
+lds common, RightButton + 4
+inc common
+sts RightButton + 4, common
+sts CurrentRightButton, common
+cpi common, 2
+brne exitMenu4
+eor common, common
+sts RightButton + 4, common
+sts CurrentRightButton, common
+
+exitMenu4:
+rcall GetTemperature0
+rcall GetTemperature1
+lds digit0, Temperature
+lds digit1, Temperature + 1
+ComposeTemperature digit0, digit1
+sts Temperature, digit0
+sts Temperature + 1, digit1
+rjmp exitMenu
+
+menu5:
 exitMenu:
 ret
 

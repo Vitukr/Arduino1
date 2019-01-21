@@ -6,10 +6,10 @@
  */ 
 
 EXT_INT0:
-
+cli
 lds sys, LeftButton
 inc sys
-cpi sys, 4
+cpi sys, 5
 brne exitInt0
 eor sys, sys
 
@@ -20,14 +20,17 @@ sts CurrentRightButton, temp
 ; event
 ldi sys, 2
 sts Seconds5, sys
+sei
 reti
 
 ;=====================================================
 EXT_INT1:
+cli
 rcall MenuL
 ; event
 ldi sys, 2
 sts Seconds5, sys
+sei
 reti
 
 ;=====================================================
@@ -41,13 +44,24 @@ TIM1_OVF:		; 0.5 second
 				TimerAddSecond
 				eor halfSecond, halfSecond
 
+				; display menu
 				lds temp, Seconds5
 				cpi temp, 0
 				breq Continue
 				dec temp
 				sts Seconds5, temp
-				; =============================
+
 				Continue:
+				; get temperature
+				lds temp, SecondsTemperature
+				cpi temp, 0
+				breq getT
+				dec temp
+				sts SecondsTemperature, temp
+
+				getT:
+
+				; =============================
 				rcall Timer_restart
 				sei
 				reti

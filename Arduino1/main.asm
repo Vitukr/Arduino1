@@ -30,12 +30,14 @@ Seconds:			.byte 1
 Minutes:			.byte 1
 Hours:				.byte 1
 LeftButton:			.byte 1
-RightButton:		.byte 4
+RightButton:		.byte 5
 CurrentRightButton: .byte 1
 Seconds5:			.byte 1
 TicTac:				.byte 1
 DS:					.byte 1
-Temperature:		.byte 1
+Temperature:		.byte 2
+SecondsTemperature:	.byte 1
+;MainDisplay:		.byte 1
 ;=================================================================
 .cseg
 .org 0 rjmp Reset
@@ -64,6 +66,7 @@ Reset: // Предустановки
 				eor temp, temp
 				sts LeftButton, temp
 				sts RightButton, temp
+				;sts MainDisplay, temp
 				;ldi temp, 1
 				sts RightButton + 1, temp
 				sts RightButton + 2, temp
@@ -71,6 +74,10 @@ Reset: // Предустановки
 				sts CurrentRightButton, temp
 				ldi temp, 2
 				sts Seconds5, temp
+				ldi temp, 10
+				sts SecondsTemperature, temp
+				ldi temp, 37
+				sts Temperature, temp
 
 				ldi temp, 0
 				sts Seconds, temp
@@ -80,41 +87,6 @@ Reset: // Предустановки
 				rcall Init_TIMER1
 				rcall Init_PORTS
 				rcall Init_Ext_Interups
-
-				OneWireReset
-				lds temp, DS
-				cpi temp, 1
-				breq yesDS
-				rjmp NoDS
-				; DS
-				yesDS:
-				ldi temp, 1
-				sts LeftButton, temp
-
-				ldi common, $CC
-				OneWireWrite common
-				ldi common, $44
-				OneWireWrite common
-				;rcall Delay_480ms
-
-				OneWireReset
-
-				ldi common, $CC
-				OneWireWrite common
-				ldi common, $BE
-				OneWireWrite common
-
-				OneWireRead common
-				sts Temperature, common
-				sts Hours, common
-				OneWireRead common
-				sts Temperature + 1, common
-				sts Minutes, common
-
-				OneWireReset
-
-				; NoDS
-				NoDS:
 				
 				eor halfSecond, halfSecond
 				
@@ -124,20 +96,47 @@ Reset: // Предустановки
 ;MAIN 0x00D
 ;*********************************************************
 Main:   
-				lds common, RightButton
-				cpi common, 2				; turn off display
-				breq EndMain
 
 				lds temp, Seconds5
 				cpi temp, 0
-				breq showDigits
+				breq showOthers
 				rcall DisplayMenu
 				rjmp EndMain
 
-				showDigits:
+				showOthers:
+				lds temp, RightButton
+				;============================
+				cpi temp, 0
+				brne mainD1
+				; display show time
 				rcall DisplayTwoPoints
-				rcall Display 
+				rcall Display
+				rjmp EndMain
 
+				mainD1:
+				cpi temp, 1
+				brne mainD2
+				; display show time
+				rcall DisplayTwoPoints
+				rcall Display
+				rjmp EndMain
+
+				mainD2:
+				cpi temp, 2
+				brne mainD3
+				; turn off display
+				breq EndMain
+
+				mainD3:
+				cpi temp, 3
+				brne EndMain
+				; display show temperature
+				/*lds temp, SecondsTemperature
+				cpi temp, 0
+				breq showTemperature*/
+				rcall DisplayTemperature
+				rjmp EndMain
+				
 				;rjmp EndMain
 EndMain: ;================================================
 				rjmp Main
@@ -149,6 +148,51 @@ Timer_restart:			; 0.5 sec
 				ldi temp, $EE
 				sts TCNT1L, temp	
 				ret
+;========================
+GetTemperature0:
+				OneWireReset
+				lds temp, DS
+				cpi temp, 1
+				breq yesDS0
+				rjmp NoDS0
+				; DS
+				yesDS0:
+
+				ldi common, $CC
+				OneWireWrite common
+				ldi common, $44
+				OneWireWrite common
+				rcall Delay_480ms
+				; NoDS
+				NoDS0:
+				ret
+
+GetTemperature1:
+				OneWireReset
+				lds temp, DS
+				cpi temp, 1
+				breq yesDS1
+				rjmp NoDS1
+				; DS
+				yesDS1:
+
+				ldi common, $CC
+				OneWireWrite common
+				ldi common, $BE
+				OneWireWrite common
+
+				OneWireRead common
+				OneWireRead sys
+
+				ComposeTemperature common, sys
+				sts Temperature, common
+				sts Temperature + 1, sys
+
+				OneWireReset
+
+				; NoDS
+				NoDS1:
+				ret
 ;=========================================================
 #include "Init.inc"
 
@@ -158,7 +202,4 @@ Timer_restart:			; 0.5 sec
 
 #include "Display.inc"
 
-
-
 #include "Constants.inc"
-;========================*/

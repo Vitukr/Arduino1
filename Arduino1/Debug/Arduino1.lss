@@ -1,24 +1,24 @@
 
-AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Mon Jan 21 01:28:11 2019
+AVRASM ver. 2.2.7  D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm Tue Jan 22 01:09:26 2019
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(51): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Delays.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(53): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Macros.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(55): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Temperature.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(153): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Init.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(155): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(157): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(159): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Constants.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(53): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Delays.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(55): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Macros.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(57): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Temperature.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(197): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Init.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(199): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(201): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(203): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(205): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Constants.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.3.300\avrasm\inc\m328pdef.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(51): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Delays.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(53): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Macros.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(55): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Temperature.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(153): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Init.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(155): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(157): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(159): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc'
-D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Constants.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(53): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Delays.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(55): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Macros.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(57): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Temperature.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(197): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Init.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(199): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(201): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(203): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc'
+D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(205): Including file 'D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Constants.inc'
                                  
                                  ;
                                  
@@ -1032,21 +1032,23 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
 000105                           Minutes:			.byte 1
 000106                           Hours:				.byte 1
 000107                           LeftButton:			.byte 1
-000108                           RightButton:		.byte 4
-00010c                           CurrentRightButton: .byte 1
-00010d                           Seconds5:			.byte 1
-00010e                           TicTac:				.byte 1
-00010f                           DS:					.byte 1
-000110                           Temperature:		.byte 1
+000108                           RightButton:		.byte 5
+00010d                           CurrentRightButton: .byte 1
+00010e                           Seconds5:			.byte 1
+00010f                           TicTac:				.byte 1
+000110                           DS:					.byte 1
+000111                           Temperature:		.byte 2
+000113                           SecondsTemperature:	.byte 1
+                                 ;MainDisplay:		.byte 1
                                  ;=================================================================
                                  .cseg
 000000 c05a                      .org 0 rjmp Reset
-000002 940c 02ba                 .org 0x0002 jmp EXT_INT0 ; IRQ0 Handler
-000004 940c 02c9                 .org 0x0004 jmp EXT_INT1 ; IRQ1 Handler
+000002 940c 02b7                 .org 0x0002 jmp EXT_INT0 ; IRQ0 Handler
+000004 940c 02c8                 .org 0x0004 jmp EXT_INT1 ; IRQ1 Handler
                                  //.org 0x0006 jmp PCINT0 ; PCINT0 Handler
                                  //.org 0x0008 jmp PCINT1_INT ; PCINT1 Handler
                                  //.org 0x000A jmp PCINT2 ; PCINT2 Handler
-00001a c2b3                      .org 0x001A rjmp TIM1_OVF
+00001a c2b4                      .org 0x001A rjmp TIM1_OVF
                                  
                                  .equ OneWire = 4 ; PortC bit = 4
                                  
@@ -1236,22 +1238,26 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  ldi ZL,Low(@1<<1)   ;инициализация массива
                                  
                                  mov inMacro, @0
-                                 ;add inMacro, Low(@1<<1)
-                                 
-                                 /*clr r31      ; Очистить старший байт Z
-                                 ldi r30, Low(@1<<1) ; Установить младший байт Z*/
                                  
                                  add ZL, inMacro            ;к 0-му адресу массива
                                  ldi inMacro, 0 
                                  adc ZH, inMacro
                                  
-                                 /*ldi temp, 0             ;прибавление переменной
-                                 add ZL, @0            ;к 0-му адресу массива
-                                 adc ZH, temp*/
-                                 
                                  lpm @0, Z                    ;загрузка значения
-                                 /*lpm
-                                 mov @0, r0*/
+                                 .endmacro
+                                 
+                                 .macro ComposeTemperature			; @0 - LS BYTE, @1 - MS BYTE, 1111 - are left, return @0 - temperature, @1 - sign
+                                 	andi @0, 0b11110000
+                                 	andi @1, 0b00001111
+                                 	or @0, @1
+                                 	eor @1, @1
+                                 	sbrc @0, 7
+                                 	rjmp negative
+                                 	rjmp notnegative
+                                 	negative:
+                                 	cbr @0, 7
+                                 	sbr @1, 0
+                                 	notnegative:
                                  .endmacro
                                  
                                  #include "Temperature.inc"
@@ -1273,12 +1279,15 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  				rcall Delay_480ms
                                  
                                  				cbi	DDRC, OneWire	; in
-                                 				rcall Delay_100ms
+                                 				rcall Delay_50ms
                                  				; presence
                                  
                                  				sbic PINC, OneWire	; if 0
                                  				rjmp noDS
                                  				; DS exists
+                                 				/*rcall Delay_100ms
+                                 				rcall Delay_100ms
+                                 				rcall Delay_100ms*/
                                  				ldi temp, 1
                                  				sts DS, temp
                                  				rjmp skipNoDS
@@ -1294,12 +1303,12 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  	sbi	DDRC, OneWire
                                  	cbi	PORTC, OneWire
                                  	rcall Delay_1ms
-                                 	rcall Delay_1ms
+                                 	;rcall Delay_1ms
                                  
                                  	sbrc @0, @1
-                                 	cbi	DDRC, OneWire
+                                 	cbi	DDRC, OneWire ; bit = 1
                                  	sbrs @0, @1
-                                 	nop ;cbi	PORTC, OneWire
+                                 	nop ;cbi	PORTC, OneWire bit = 0
                                  
                                  	rcall Delay_65ms
                                  .endm
@@ -1325,9 +1334,14 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  	; delay 15 mc
                                  	rcall Delay_15ms
                                  
-                                 	sbic PORTC, OneWire
+                                 	/*sbic PINC, OneWire
                                  	sbr	@0, @1
-                                 	sbis PORTC, OneWire
+                                 	sbis PINC, OneWire
+                                 	cbr	@0, @1*/
+                                 
+                                 	sbic PC4, OneWire
+                                 	sbr	@0, @1
+                                 	sbis PC4, OneWire
                                  	cbr	@0, @1
                                  
                                  	rcall Delay_50ms
@@ -1354,588 +1368,606 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
 000060 2700                      				eor temp, temp
 000061 9300 0107                 				sts LeftButton, temp
 000063 9300 0108                 				sts RightButton, temp
+                                 				;sts MainDisplay, temp
                                  				;ldi temp, 1
 000065 9300 0109                 				sts RightButton + 1, temp
 000067 9300 010a                 				sts RightButton + 2, temp
 000069 9300 010b                 				sts RightButton + 3, temp
-00006b 9300 010c                 				sts CurrentRightButton, temp
+00006b 9300 010d                 				sts CurrentRightButton, temp
 00006d e002                      				ldi temp, 2
-00006e 9300 010d                 				sts Seconds5, temp
+00006e 9300 010e                 				sts Seconds5, temp
+000070 e00a                      				ldi temp, 10
+000071 9300 0113                 				sts SecondsTemperature, temp
+000073 e205                      				ldi temp, 37
+000074 9300 0111                 				sts Temperature, temp
                                  
-000070 e000                      				ldi temp, 0
-000071 9300 0104                 				sts Seconds, temp
-000073 9300 0105                 				sts Minutes, temp
-000075 9300 0106                 				sts Hours, temp
+000076 e000                      				ldi temp, 0
+000077 9300 0104                 				sts Seconds, temp
+000079 9300 0105                 				sts Minutes, temp
+00007b 9300 0106                 				sts Hours, temp
                                  				
-000077 d22d                      				rcall Init_TIMER1
-000078 d234                      				rcall Init_PORTS
-000079 d23a                      				rcall Init_Ext_Interups
+00007d d224                      				rcall Init_TIMER1
+00007e d22b                      				rcall Init_PORTS
+00007f d231                      				rcall Init_Ext_Interups
+                                 				
+000080 2799                      				eor halfSecond, halfSecond
+                                 				
+000081 d01b                      				rcall Timer_restart
+000082 9478                      				sei
+                                 ;*********************************************************
+                                 ;MAIN 0x00D
+                                 ;*********************************************************
+                                 Main:   
                                  
-00007a 9a3c
-00007b 9a44
-00007c dfa5
-00007d 9844
-00007e dfd2
-00007f 983c
-000080 dfc6
-000081 9934
-000082 c004
-000083 e001
-000084 9300 010f
-000086 c003
-000087 e000
-000088 9300 010f                 				OneWireReset
-00008a 9100 010f                 				lds temp, DS
-00008c 3001                      				cpi temp, 1
-00008d f009                      				breq yesDS
-00008e c1ff                      				rjmp NoDS
+000083 9100 010e                 				lds temp, Seconds5
+000085 3000                      				cpi temp, 0
+000086 f011                      				breq showOthers
+000087 d34b                      				rcall DisplayMenu
+000088 c013                      				rjmp EndMain
+                                 
+                                 				showOthers:
+000089 9100 0108                 				lds temp, RightButton
+                                 				;============================
+00008b 3000                      				cpi temp, 0
+00008c f419                      				brne mainD1
+                                 				; display show time
+00008d d2ee                      				rcall DisplayTwoPoints
+00008e d38b                      				rcall Display
+00008f c00c                      				rjmp EndMain
+                                 
+                                 				mainD1:
+000090 3001                      				cpi temp, 1
+000091 f419                      				brne mainD2
+                                 				; display show time
+000092 d2e9                      				rcall DisplayTwoPoints
+000093 d386                      				rcall Display
+000094 c007                      				rjmp EndMain
+                                 
+                                 				mainD2:
+000095 3002                      				cpi temp, 2
+000096 f409                      				brne mainD3
+                                 				; turn off display
+000097 f021                      				breq EndMain
+                                 
+                                 				mainD3:
+000098 3003                      				cpi temp, 3
+000099 f411                      				brne EndMain
+                                 				; display show temperature
+                                 				/*lds temp, SecondsTemperature
+                                 				cpi temp, 0
+                                 				breq showTemperature*/
+00009a d2ed                      				rcall DisplayTemperature
+00009b c000                      				rjmp EndMain
+                                 				
+                                 				;rjmp EndMain
+                                 EndMain: ;================================================
+00009c cfe6                      				rjmp Main
+                                 
+                                 ;*********************************************************
+                                 Timer_restart:			; 0.5 sec 
+00009d e805                      				ldi temp, $85
+00009e 9300 0085                 				sts TCNT1H, temp
+0000a0 ee0e                      				ldi temp, $EE
+0000a1 9300 0084                 				sts TCNT1L, temp	
+0000a3 9508                      				ret
+                                 ;========================
+                                 GetTemperature0:
+0000a4 9a3c
+0000a5 9a44
+0000a6 df7b
+0000a7 9844
+0000a8 dfa8
+0000a9 983c
+0000aa df88
+0000ab 9934
+0000ac c004
+0000ad e001
+0000ae 9300 0110
+0000b0 c003
+0000b1 e000
+0000b2 9300 0110                 				OneWireReset
+0000b4 9100 0110                 				lds temp, DS
+0000b6 3001                      				cpi temp, 1
+0000b7 f009                      				breq yesDS0
+0000b8 c083                      				rjmp NoDS0
                                  				; DS
-                                 				yesDS:
-00008f e001                      				ldi temp, 1
-000090 9300 0107                 				sts LeftButton, temp
+                                 				yesDS0:
                                  
-000092 ec1c                      				ldi common, $CC
-000093 9a3c
-000094 9844
-000095 df85
-000096 df84
-000097 fd10
-000098 983c
-000099 ff10
-00009a 0000
-00009b dfa1
-00009c 9a3c
-00009d 9844
-00009e df7c
-00009f df7b
-0000a0 fd11
-0000a1 983c
-0000a2 ff11
-0000a3 0000
-0000a4 df98
-0000a5 9a3c
-0000a6 9844
-0000a7 df73
-0000a8 df72
-0000a9 fd12
-0000aa 983c
-0000ab ff12
-0000ac 0000
-0000ad df8f
-0000ae 9a3c
-0000af 9844
-0000b0 df6a
-0000b1 df69
-0000b2 fd13
-0000b3 983c
-0000b4 ff13
-0000b5 0000
-0000b6 df86
-0000b7 9a3c
-0000b8 9844
-0000b9 df61
-0000ba df60
-0000bb fd14
-0000bc 983c
-0000bd ff14
-0000be 0000
-0000bf df7d
-0000c0 9a3c
-0000c1 9844
-0000c2 df58
-0000c3 df57
-0000c4 fd15
-0000c5 983c
-0000c6 ff15
-0000c7 0000
-0000c8 df74
-0000c9 9a3c
-0000ca 9844
-0000cb df4f
+0000b9 ec1c                      				ldi common, $CC
+0000ba 9a3c
+0000bb 9844
+0000bc df5e
+0000bd fd10
+0000be 983c
+0000bf ff10
+0000c0 0000
+0000c1 df7b
+0000c2 9a3c
+0000c3 9844
+0000c4 df56
+0000c5 fd11
+0000c6 983c
+0000c7 ff11
+0000c8 0000
+0000c9 df73
+0000ca 9a3c
+0000cb 9844
 0000cc df4e
-0000cd fd16
+0000cd fd12
 0000ce 983c
-0000cf ff16
+0000cf ff12
 0000d0 0000
 0000d1 df6b
 0000d2 9a3c
 0000d3 9844
 0000d4 df46
-0000d5 df45
-0000d6 fd17
-0000d7 983c
-0000d8 ff17
-0000d9 0000
-0000da df62                      				OneWireWrite common
-0000db e414                      				ldi common, $44
-0000dc 9a3c
-0000dd 9844
-0000de df3c
-0000df df3b
-0000e0 fd10
-0000e1 983c
-0000e2 ff10
-0000e3 0000
-0000e4 df58
-0000e5 9a3c
-0000e6 9844
-0000e7 df33
-0000e8 df32
-0000e9 fd11
-0000ea 983c
-0000eb ff11
-0000ec 0000
-0000ed df4f
-0000ee 9a3c
-0000ef 9844
-0000f0 df2a
-0000f1 df29
-0000f2 fd12
-0000f3 983c
-0000f4 ff12
-0000f5 0000
-0000f6 df46
-0000f7 9a3c
-0000f8 9844
-0000f9 df21
-0000fa df20
-0000fb fd13
-0000fc 983c
-0000fd ff13
-0000fe 0000
-0000ff df3d
-000100 9a3c
-000101 9844
-000102 df18
-000103 df17
-000104 fd14
-000105 983c
-000106 ff14
-000107 0000
-000108 df34
-000109 9a3c
-00010a 9844
-00010b df0f
-00010c df0e
-00010d fd15
-00010e 983c
-00010f ff15
-000110 0000
-000111 df2b
-000112 9a3c
-000113 9844
-000114 df06
+0000d5 fd13
+0000d6 983c
+0000d7 ff13
+0000d8 0000
+0000d9 df63
+0000da 9a3c
+0000db 9844
+0000dc df3e
+0000dd fd14
+0000de 983c
+0000df ff14
+0000e0 0000
+0000e1 df5b
+0000e2 9a3c
+0000e3 9844
+0000e4 df36
+0000e5 fd15
+0000e6 983c
+0000e7 ff15
+0000e8 0000
+0000e9 df53
+0000ea 9a3c
+0000eb 9844
+0000ec df2e
+0000ed fd16
+0000ee 983c
+0000ef ff16
+0000f0 0000
+0000f1 df4b
+0000f2 9a3c
+0000f3 9844
+0000f4 df26
+0000f5 fd17
+0000f6 983c
+0000f7 ff17
+0000f8 0000
+0000f9 df43                      				OneWireWrite common
+0000fa e414                      				ldi common, $44
+0000fb 9a3c
+0000fc 9844
+0000fd df1d
+0000fe fd10
+0000ff 983c
+000100 ff10
+000101 0000
+000102 df3a
+000103 9a3c
+000104 9844
+000105 df15
+000106 fd11
+000107 983c
+000108 ff11
+000109 0000
+00010a df32
+00010b 9a3c
+00010c 9844
+00010d df0d
+00010e fd12
+00010f 983c
+000110 ff12
+000111 0000
+000112 df2a
+000113 9a3c
+000114 9844
 000115 df05
-000116 fd16
+000116 fd13
 000117 983c
-000118 ff16
+000118 ff13
 000119 0000
 00011a df22
 00011b 9a3c
 00011c 9844
 00011d defd
-00011e defc
-00011f fd17
-000120 983c
-000121 ff17
-000122 0000
-000123 df19                      				OneWireWrite common
-                                 				;rcall Delay_480ms
+00011e fd14
+00011f 983c
+000120 ff14
+000121 0000
+000122 df1a
+000123 9a3c
+000124 9844
+000125 def5
+000126 fd15
+000127 983c
+000128 ff15
+000129 0000
+00012a df12
+00012b 9a3c
+00012c 9844
+00012d deed
+00012e fd16
+00012f 983c
+000130 ff16
+000131 0000
+000132 df0a
+000133 9a3c
+000134 9844
+000135 dee5
+000136 fd17
+000137 983c
+000138 ff17
+000139 0000
+00013a df02                      				OneWireWrite common
+00013b df15                      				rcall Delay_480ms
+                                 				; NoDS
+                                 				NoDS0:
+00013c 9508                      				ret
                                  
-000124 9a3c
-000125 9a44
-000126 defb
-000127 9844
-000128 df28
-000129 983c
-00012a df1c
-00012b 9934
-00012c c004
-00012d e001
-00012e 9300 010f
-000130 c003
-000131 e000
-000132 9300 010f                 				OneWireReset
+                                 GetTemperature1:
+00013d 9a3c
+00013e 9a44
+00013f dee2
+000140 9844
+000141 df0f
+000142 983c
+000143 deef
+000144 9934
+000145 c004
+000146 e001
+000147 9300 0110
+000149 c003
+00014a e000
+00014b 9300 0110                 				OneWireReset
+00014d 9100 0110                 				lds temp, DS
+00014f 3001                      				cpi temp, 1
+000150 f009                      				breq yesDS1
+000151 c14f                      				rjmp NoDS1
+                                 				; DS
+                                 				yesDS1:
                                  
-000134 ec1c                      				ldi common, $CC
-000135 9a3c
-000136 9844
-000137 dee3
-000138 dee2
-000139 fd10
-00013a 983c
-00013b ff10
-00013c 0000
-00013d deff
-00013e 9a3c
-00013f 9844
-000140 deda
-000141 ded9
-000142 fd11
-000143 983c
-000144 ff11
-000145 0000
-000146 def6
-000147 9a3c
-000148 9844
-000149 ded1
-00014a ded0
-00014b fd12
-00014c 983c
-00014d ff12
-00014e 0000
-00014f deed
-000150 9a3c
-000151 9844
-000152 dec8
-000153 dec7
-000154 fd13
-000155 983c
-000156 ff13
-000157 0000
-000158 dee4
-000159 9a3c
-00015a 9844
-00015b debf
-00015c debe
-00015d fd14
-00015e 983c
-00015f ff14
-000160 0000
-000161 dedb
-000162 9a3c
-000163 9844
-000164 deb6
+000152 ec1c                      				ldi common, $CC
+000153 9a3c
+000154 9844
+000155 dec5
+000156 fd10
+000157 983c
+000158 ff10
+000159 0000
+00015a dee2
+00015b 9a3c
+00015c 9844
+00015d debd
+00015e fd11
+00015f 983c
+000160 ff11
+000161 0000
+000162 deda
+000163 9a3c
+000164 9844
 000165 deb5
-000166 fd15
+000166 fd12
 000167 983c
-000168 ff15
+000168 ff12
 000169 0000
 00016a ded2
 00016b 9a3c
 00016c 9844
 00016d dead
-00016e deac
-00016f fd16
-000170 983c
-000171 ff16
-000172 0000
-000173 dec9
-000174 9a3c
-000175 9844
-000176 dea4
-000177 dea3
-000178 fd17
-000179 983c
-00017a ff17
-00017b 0000
-00017c dec0                      				OneWireWrite common
-00017d eb1e                      				ldi common, $BE
-00017e 9a3c
-00017f 9844
-000180 de9a
-000181 de99
-000182 fd10
-000183 983c
-000184 ff10
-000185 0000
-000186 deb6
-000187 9a3c
-000188 9844
-000189 de91
-00018a de90
-00018b fd11
-00018c 983c
-00018d ff11
-00018e 0000
-00018f dead
-000190 9a3c
-000191 9844
-000192 de88
-000193 de87
-000194 fd12
-000195 983c
-000196 ff12
-000197 0000
-000198 dea4
-000199 9a3c
-00019a 9844
-00019b de7f
-00019c de7e
-00019d fd13
-00019e 983c
-00019f ff13
-0001a0 0000
-0001a1 de9b
-0001a2 9a3c
-0001a3 9844
-0001a4 de76
-0001a5 de75
-0001a6 fd14
-0001a7 983c
-0001a8 ff14
-0001a9 0000
-0001aa de92
-0001ab 9a3c
-0001ac 9844
-0001ad de6d
+00016e fd13
+00016f 983c
+000170 ff13
+000171 0000
+000172 deca
+000173 9a3c
+000174 9844
+000175 dea5
+000176 fd14
+000177 983c
+000178 ff14
+000179 0000
+00017a dec2
+00017b 9a3c
+00017c 9844
+00017d de9d
+00017e fd15
+00017f 983c
+000180 ff15
+000181 0000
+000182 deba
+000183 9a3c
+000184 9844
+000185 de95
+000186 fd16
+000187 983c
+000188 ff16
+000189 0000
+00018a deb2
+00018b 9a3c
+00018c 9844
+00018d de8d
+00018e fd17
+00018f 983c
+000190 ff17
+000191 0000
+000192 deaa                      				OneWireWrite common
+000193 eb1e                      				ldi common, $BE
+000194 9a3c
+000195 9844
+000196 de84
+000197 fd10
+000198 983c
+000199 ff10
+00019a 0000
+00019b dea1
+00019c 9a3c
+00019d 9844
+00019e de7c
+00019f fd11
+0001a0 983c
+0001a1 ff11
+0001a2 0000
+0001a3 de99
+0001a4 9a3c
+0001a5 9844
+0001a6 de74
+0001a7 fd12
+0001a8 983c
+0001a9 ff12
+0001aa 0000
+0001ab de91
+0001ac 9a3c
+0001ad 9844
 0001ae de6c
-0001af fd15
+0001af fd13
 0001b0 983c
-0001b1 ff15
+0001b1 ff13
 0001b2 0000
 0001b3 de89
 0001b4 9a3c
 0001b5 9844
 0001b6 de64
-0001b7 de63
-0001b8 fd16
-0001b9 983c
-0001ba ff16
-0001bb 0000
-0001bc de80
-0001bd 9a3c
-0001be 9844
-0001bf de5b
-0001c0 de5a
-0001c1 fd17
-0001c2 983c
-0001c3 ff17
-0001c4 0000
-0001c5 de77                      				OneWireWrite common
+0001b7 fd14
+0001b8 983c
+0001b9 ff14
+0001ba 0000
+0001bb de81
+0001bc 9a3c
+0001bd 9844
+0001be de5c
+0001bf fd15
+0001c0 983c
+0001c1 ff15
+0001c2 0000
+0001c3 de79
+0001c4 9a3c
+0001c5 9844
+0001c6 de54
+0001c7 fd16
+0001c8 983c
+0001c9 ff16
+0001ca 0000
+0001cb de71
+0001cc 9a3c
+0001cd 9844
+0001ce de4c
+0001cf fd17
+0001d0 983c
+0001d1 ff17
+0001d2 0000
+0001d3 de69                      				OneWireWrite common
                                  
-0001c6 9a3c
-0001c7 9844
-0001c8 de52
-0001c9 de51
-0001ca 983c
-0001cb de5d
-0001cc 9944
-0001cd 6010
-0001ce 9b44
-0001cf 7f1f
-0001d0 de62
-0001d1 9a3c
-0001d2 9844
-0001d3 de47
-0001d4 de46
-0001d5 983c
-0001d6 de52
-0001d7 9944
-0001d8 6011
-0001d9 9b44
-0001da 7f1e
-0001db de57
-0001dc 9a3c
-0001dd 9844
-0001de de3c
-0001df de3b
-0001e0 983c
-0001e1 de47
-0001e2 9944
-0001e3 6012
-0001e4 9b44
-0001e5 7f1d
-0001e6 de4c
-0001e7 9a3c
-0001e8 9844
-0001e9 de31
-0001ea de30
-0001eb 983c
-0001ec de3c
-0001ed 9944
-0001ee 6013
-0001ef 9b44
-0001f0 7f1c
-0001f1 de41
-0001f2 9a3c
-0001f3 9844
-0001f4 de26
-0001f5 de25
-0001f6 983c
-0001f7 de31
-0001f8 9944
-0001f9 6014
-0001fa 9b44
-0001fb 7f1b
-0001fc de36
-0001fd 9a3c
-0001fe 9844
-0001ff de1b
-000200 de1a
-000201 983c
-000202 de26
-000203 9944
-000204 6015
-000205 9b44
-000206 7f1a
-000207 de2b
-000208 9a3c
-000209 9844
-00020a de10
-00020b de0f
-00020c 983c
-00020d de1b
-00020e 9944
-00020f 6016
-000210 9b44
-000211 7f19
-000212 de20
-000213 9a3c
-000214 9844
-000215 de05
-000216 de04
-000217 983c
-000218 de10
-000219 9944
-00021a 6017
-00021b 9b44
-00021c 7f18
-00021d de15                      				OneWireRead common
-00021e 9310 0110                 				sts Temperature, common
-000220 9310 0106                 				sts Hours, common
-000222 9a3c
-000223 9844
+0001d4 9a3c
+0001d5 9844
+0001d6 de44
+0001d7 de43
+0001d8 983c
+0001d9 de4f
+0001da 9924
+0001db 6010
+0001dc 9b24
+0001dd 7f1f
+0001de de54
+0001df 9a3c
+0001e0 9844
+0001e1 de39
+0001e2 de38
+0001e3 983c
+0001e4 de44
+0001e5 9924
+0001e6 6011
+0001e7 9b24
+0001e8 7f1e
+0001e9 de49
+0001ea 9a3c
+0001eb 9844
+0001ec de2e
+0001ed de2d
+0001ee 983c
+0001ef de39
+0001f0 9924
+0001f1 6012
+0001f2 9b24
+0001f3 7f1d
+0001f4 de3e
+0001f5 9a3c
+0001f6 9844
+0001f7 de23
+0001f8 de22
+0001f9 983c
+0001fa de2e
+0001fb 9924
+0001fc 6013
+0001fd 9b24
+0001fe 7f1c
+0001ff de33
+000200 9a3c
+000201 9844
+000202 de18
+000203 de17
+000204 983c
+000205 de23
+000206 9924
+000207 6014
+000208 9b24
+000209 7f1b
+00020a de28
+00020b 9a3c
+00020c 9844
+00020d de0d
+00020e de0c
+00020f 983c
+000210 de18
+000211 9924
+000212 6015
+000213 9b24
+000214 7f1a
+000215 de1d
+000216 9a3c
+000217 9844
+000218 de02
+000219 de01
+00021a 983c
+00021b de0d
+00021c 9924
+00021d 6016
+00021e 9b24
+00021f 7f19
+000220 de12
+000221 9a3c
+000222 9844
+000223 ddf7
 000224 ddf6
-000225 ddf5
-000226 983c
-000227 de01
-000228 9944
-000229 6010
-00022a 9b44
-00022b 7f1f
-00022c de06
-00022d 9a3c
-00022e 9844
+000225 983c
+000226 de02
+000227 9924
+000228 6017
+000229 9b24
+00022a 7f18
+00022b de07                      				OneWireRead common
+00022c 9a3c
+00022d 9844
+00022e ddec
 00022f ddeb
-000230 ddea
-000231 983c
-000232 ddf6
-000233 9944
-000234 6011
-000235 9b44
-000236 7f1e
-000237 ddfb
-000238 9a3c
-000239 9844
+000230 983c
+000231 ddf7
+000232 9924
+000233 6020
+000234 9b24
+000235 7f2f
+000236 ddfc
+000237 9a3c
+000238 9844
+000239 dde1
 00023a dde0
-00023b dddf
-00023c 983c
-00023d ddeb
-00023e 9944
-00023f 6012
-000240 9b44
-000241 7f1d
-000242 ddf0
-000243 9a3c
-000244 9844
+00023b 983c
+00023c ddec
+00023d 9924
+00023e 6021
+00023f 9b24
+000240 7f2e
+000241 ddf1
+000242 9a3c
+000243 9844
+000244 ddd6
 000245 ddd5
-000246 ddd4
-000247 983c
-000248 dde0
-000249 9944
-00024a 6013
-00024b 9b44
-00024c 7f1c
-00024d dde5
-00024e 9a3c
-00024f 9844
+000246 983c
+000247 dde1
+000248 9924
+000249 6022
+00024a 9b24
+00024b 7f2d
+00024c dde6
+00024d 9a3c
+00024e 9844
+00024f ddcb
 000250 ddca
-000251 ddc9
-000252 983c
-000253 ddd5
-000254 9944
-000255 6014
-000256 9b44
-000257 7f1b
-000258 ddda
-000259 9a3c
-00025a 9844
+000251 983c
+000252 ddd6
+000253 9924
+000254 6023
+000255 9b24
+000256 7f2c
+000257 dddb
+000258 9a3c
+000259 9844
+00025a ddc0
 00025b ddbf
-00025c ddbe
-00025d 983c
-00025e ddca
-00025f 9944
-000260 6015
-000261 9b44
-000262 7f1a
-000263 ddcf
-000264 9a3c
-000265 9844
+00025c 983c
+00025d ddcb
+00025e 9924
+00025f 6024
+000260 9b24
+000261 7f2b
+000262 ddd0
+000263 9a3c
+000264 9844
+000265 ddb5
 000266 ddb4
-000267 ddb3
-000268 983c
-000269 ddbf
-00026a 9944
-00026b 6016
-00026c 9b44
-00026d 7f19
-00026e ddc4
-00026f 9a3c
-000270 9844
+000267 983c
+000268 ddc0
+000269 9924
+00026a 6025
+00026b 9b24
+00026c 7f2a
+00026d ddc5
+00026e 9a3c
+00026f 9844
+000270 ddaa
 000271 dda9
-000272 dda8
-000273 983c
-000274 ddb4
-000275 9944
-000276 6017
-000277 9b44
-000278 7f18
-000279 ddb9                      				OneWireRead common
-00027a 9310 0111                 				sts Temperature + 1, common
-00027c 9310 0105                 				sts Minutes, common
+000272 983c
+000273 ddb5
+000274 9924
+000275 6026
+000276 9b24
+000277 7f29
+000278 ddba
+000279 9a3c
+00027a 9844
+00027b dd9f
+00027c dd9e
+00027d 983c
+00027e ddaa
+00027f 9924
+000280 6027
+000281 9b24
+000282 7f28
+000283 ddaf                      				OneWireRead sys
                                  
-00027e 9a3c
-00027f 9a44
-000280 dda1
-000281 9844
-000282 ddce
-000283 983c
-000284 ddc2
-000285 9934
-000286 c004
-000287 e001
-000288 9300 010f
-00028a c003
-00028b e000
-00028c 9300 010f                 				OneWireReset
+000284 7f10
+000285 702f
+000286 2b12
+000287 2722
+000288 fd17
+000289 c001
+00028a c002
+00028b 7f18
+00028c 6020                      				ComposeTemperature common, sys
+00028d 9310 0111                 				sts Temperature, common
+00028f 9320 0112                 				sts Temperature + 1, sys
+                                 
+000291 9a3c
+000292 9a44
+000293 dd8e
+000294 9844
+000295 ddbb
+000296 983c
+000297 dd9b
+000298 9934
+000299 c004
+00029a e001
+00029b 9300 0110
+00029d c003
+00029e e000
+00029f 9300 0110                 				OneWireReset
                                  
                                  				; NoDS
-                                 				NoDS:
-                                 				
-00028e 2799                      				eor halfSecond, halfSecond
-                                 				
-00028f d00e                      				rcall Timer_restart
-000290 9478                      				sei
-                                 ;*********************************************************
-                                 ;MAIN 0x00D
-                                 ;*********************************************************
-                                 Main:   
-000291 9110 0108                 				lds common, RightButton
-000293 3012                      				cpi common, 2				; turn off display
-000294 f041                      				breq EndMain
-                                 
-000295 9100 010d                 				lds temp, Seconds5
-000297 3000                      				cpi temp, 0
-000298 f011                      				breq showDigits
-000299 d0c2                      				rcall DisplayMenu
-00029a c002                      				rjmp EndMain
-                                 
-                                 				showDigits:
-00029b d0b4                      				rcall DisplayTwoPoints
-00029c d108                      				rcall Display 
-                                 
-                                 				;rjmp EndMain
-                                 EndMain: ;================================================
-00029d cff3                      				rjmp Main
-                                 
-                                 ;*********************************************************
-                                 Timer_restart:			; 0.5 sec 
-00029e e805                      				ldi temp, $85
-00029f 9300 0085                 				sts TCNT1H, temp
-0002a1 ee0e                      				ldi temp, $EE
-0002a2 9300 0084                 				sts TCNT1L, temp	
-0002a4 9508                      				ret
+                                 				NoDS1:
+0002a1 9508                      				ret
                                  ;=========================================================
                                  #include "Init.inc"
                                  
@@ -1946,32 +1978,32 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                   */ 
                                  
                                   Init_TIMER1:
-0002a5 e004                      				ldi temp, 0b00000100
-0002a6 9300 0081                 				sts TCCR1B, temp
-0002a8 e001                      				ldi temp, 0b00000001
-0002a9 9300 006f                 				sts TIMSK1, temp
-0002ab dff2                      				rcall Timer_restart
-0002ac 9508                      				ret
+0002a2 e004                      				ldi temp, 0b00000100
+0002a3 9300 0081                 				sts TCCR1B, temp
+0002a5 e001                      				ldi temp, 0b00000001
+0002a6 9300 006f                 				sts TIMSK1, temp
+0002a8 ddf4                      				rcall Timer_restart
+0002a9 9508                      				ret
                                  
                                  Init_PORTS:
-0002ad e30f                      				ldi temp, 0b00111111
-0002ae b904                      				out DDRB, temp
-0002af ef03                      				ldi temp, 0b11110011	; bits 2 and 3 buttons input
-0002b0 b90a                      				out DDRD, temp
-0002b1 e30f                      				ldi temp, 0b00111111
-0002b2 b907                      				out DDRC, temp
-0002b3 9508                      				ret
+0002aa e30f                      				ldi temp, 0b00111111
+0002ab b904                      				out DDRB, temp
+0002ac ef03                      				ldi temp, 0b11110011	; bits 2 and 3 buttons input
+0002ad b90a                      				out DDRD, temp
+0002ae e30f                      				ldi temp, 0b00111111
+0002af b907                      				out DDRC, temp
+0002b0 9508                      				ret
                                  
                                  Init_Ext_Interups:
                                  				/*ldi temp, 0b00000010
                                  				sts PCICR, temp
                                  				ldi temp, 0b00111000
                                  				sts PCMSK1, temp*/
-0002b4 e00a                      				ldi temp, 0b00001010
-0002b5 9300 0069                 				sts EICRA, temp
-0002b7 e003                      				ldi temp, 0b00000011
-0002b8 bb0d                      				out EIMSK, temp
-0002b9 9508                      				ret
+0002b1 e00a                      				ldi temp, 0b00001010
+0002b2 9300 0069                 				sts EICRA, temp
+0002b4 e003                      				ldi temp, 0b00000011
+0002b5 bb0d                      				out EIMSK, temp
+0002b6 9508                      				ret
                                  
                                  #include "Interupts.inc"
                                  
@@ -1982,76 +2014,90 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                   */ 
                                  
                                  EXT_INT0:
-                                 
-0002ba 9120 0107                 lds sys, LeftButton
-0002bc 9523                      inc sys
-0002bd 3024                      cpi sys, 4
-0002be f409                      brne exitInt0
-0002bf 2722                      eor sys, sys
+0002b7 94f8                      cli
+0002b8 9120 0107                 lds sys, LeftButton
+0002ba 9523                      inc sys
+0002bb 3025                      cpi sys, 5
+0002bc f409                      brne exitInt0
+0002bd 2722                      eor sys, sys
                                  
                                  exitInt0:
-0002c0 9320 0107                 sts LeftButton, sys 
-0002c2 e000                      ldi temp, 0
-0002c3 9300 010c                 sts CurrentRightButton, temp
+0002be 9320 0107                 sts LeftButton, sys 
+0002c0 e000                      ldi temp, 0
+0002c1 9300 010d                 sts CurrentRightButton, temp
                                  ; event
-0002c5 e022                      ldi sys, 2
-0002c6 9320 010d                 sts Seconds5, sys
-0002c8 9518                      reti
+0002c3 e022                      ldi sys, 2
+0002c4 9320 010e                 sts Seconds5, sys
+0002c6 9478                      sei
+0002c7 9518                      reti
                                  
                                  ;=====================================================
                                  EXT_INT1:
-0002c9 d035                      rcall MenuL
+0002c8 94f8                      cli
+0002c9 d03d                      rcall MenuL
                                  ; event
 0002ca e022                      ldi sys, 2
-0002cb 9320 010d                 sts Seconds5, sys
-0002cd 9518                      reti
+0002cb 9320 010e                 sts Seconds5, sys
+0002cd 9478                      sei
+0002ce 9518                      reti
                                  
                                  ;=====================================================
                                  TIM1_OVF:		; 0.5 second
-0002ce 94f8                      				cli
-0002cf fb50
-0002d0 fd50
-0002d1 94e8
-0002d2 ff50
-0002d3 9468
-0002d4 f950                      				SwapBitInRegister twoPoints, 0
-0002d5 9593                      				inc halfSecond
-0002d6 3092                      				cpi halfSecond, 2
-0002d7 f521                      				brne Continue
+0002cf 94f8                      				cli
+0002d0 fb50
+0002d1 fd50
+0002d2 94e8
+0002d3 ff50
+0002d4 9468
+0002d5 f950                      				SwapBitInRegister twoPoints, 0
+0002d6 9593                      				inc halfSecond
+0002d7 3092                      				cpi halfSecond, 2
+0002d8 f521                      				brne Continue
                                  				; ========== 1 sec ============
-0002d8 9100 010e
-0002da 3000
-0002db f0c1
-0002dc 9100 0104
-0002de 9110 0105
-0002e0 9120 0106
-0002e2 9503
-0002e3 330c
-0002e4 f411
-0002e5 2700
-0002e6 9513
-0002e7 9300 0104
-0002e9 331c
-0002ea f411
-0002eb 2711
-0002ec 9523
-0002ed 9310 0105
-0002ef 3128
-0002f0 f409
-0002f1 2722
-0002f2 9320 0106                 				TimerAddSecond
-0002f4 2799                      				eor halfSecond, halfSecond
+0002d9 9100 010f
+0002db 3000
+0002dc f0c1
+0002dd 9100 0104
+0002df 9110 0105
+0002e1 9120 0106
+0002e3 9503
+0002e4 330c
+0002e5 f411
+0002e6 2700
+0002e7 9513
+0002e8 9300 0104
+0002ea 331c
+0002eb f411
+0002ec 2711
+0002ed 9523
+0002ee 9310 0105
+0002f0 3128
+0002f1 f409
+0002f2 2722
+0002f3 9320 0106                 				TimerAddSecond
+0002f5 2799                      				eor halfSecond, halfSecond
                                  
-0002f5 9100 010d                 				lds temp, Seconds5
-0002f7 3000                      				cpi temp, 0
-0002f8 f019                      				breq Continue
-0002f9 950a                      				dec temp
-0002fa 9300 010d                 				sts Seconds5, temp
-                                 				; =============================
+                                 				; display menu
+0002f6 9100 010e                 				lds temp, Seconds5
+0002f8 3000                      				cpi temp, 0
+0002f9 f019                      				breq Continue
+0002fa 950a                      				dec temp
+0002fb 9300 010e                 				sts Seconds5, temp
+                                 
                                  				Continue:
-0002fc dfa1                      				rcall Timer_restart
-0002fd 9478                      				sei
-0002fe 9518                      				reti
+                                 				; get temperature
+0002fd 9100 0113                 				lds temp, SecondsTemperature
+0002ff 3000                      				cpi temp, 0
+000300 f019                      				breq getT
+000301 950a                      				dec temp
+000302 9300 0113                 				sts SecondsTemperature, temp
+                                 
+                                 				getT:
+                                 
+                                 				; =============================
+000304 dd98                      				rcall Timer_restart
+000305 9478                      				sei
+000306 9518                      				reti
                                  
                                  
                                  #include "Menu.inc"
@@ -2064,88 +2110,120 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  
                                   ;========================
                                  MenuL:
-0002ff 9120 0107                 lds sys, LeftButton
+000307 9120 0107                 lds sys, LeftButton
                                  
-000301 3020                      cpi sys, 0
-000302 f479                      brne menu1
+000309 3020                      cpi sys, 0
+00030a f479                      brne menu1
                                  ; 0 display h:m, m:s, temperature, turn off display
-000303 9110 0108                 lds common, RightButton + 0
-000305 9513                      inc common
-000306 9310 0108                 sts RightButton + 0, common
-000308 9310 010c                 sts CurrentRightButton, common
-00030a 3013                      cpi common, 3
-00030b f429                      brne exitMenu0
-00030c 2711                      eor common, common
-00030d 9310 0108                 sts RightButton + 0, common
-00030f 9310 010c                 sts CurrentRightButton, common
+00030b 9110 0108                 lds common, RightButton + 0
+00030d 9513                      inc common
+00030e 9310 0108                 sts RightButton + 0, common
+000310 9310 010d                 sts CurrentRightButton, common
+000312 3014                      cpi common, 4
+000313 f429                      brne exitMenu0
+000314 2711                      eor common, common
+000315 9310 0108                 sts RightButton + 0, common
+000317 9310 010d                 sts CurrentRightButton, common
                                  
                                  exitMenu0:
-000311 c03c                      rjmp exitMenu
+000319 c060                      rjmp exitMenu
                                  
                                  menu1:
-000312 3021                      cpi sys, 1
-000313 f4c1                      brne menu2
+00031a 3021                      cpi sys, 1
+00031b f4c1                      brne menu2
                                  ; 1 stop/start waytch
-000314 9110 0109                 lds common, RightButton + 1
-000316 9513                      inc common
-000317 9310 0109                 sts RightButton + 1, common
-000319 9310 010c                 sts CurrentRightButton, common
-00031b 3012                      cpi common, 2
-00031c f429                      brne exitMenu1
-00031d 2711                      eor common, common
-00031e 9310 0109                 sts RightButton + 1, common
-000320 9310 010c                 sts CurrentRightButton, common
+00031c 9110 0109                 lds common, RightButton + 1
+00031e 9513                      inc common
+00031f 9310 0109                 sts RightButton + 1, common
+000321 9310 010d                 sts CurrentRightButton, common
+000323 3012                      cpi common, 2
+000324 f429                      brne exitMenu1
+000325 2711                      eor common, common
+000326 9310 0109                 sts RightButton + 1, common
+000328 9310 010d                 sts CurrentRightButton, common
                                  
                                  exitMenu1:
-000322 3010                      cpi common, 0
-000323 f421                      brne turnOnClock
+00032a 3010                      cpi common, 0
+00032b f421                      brne turnOnClock
                                  ; stop clock
-000324 e000                      ldi temp, 0
-000325 9300 010e                 sts TicTac, temp
-000327 c026                      rjmp exitMenu
+00032c e000                      ldi temp, 0
+00032d 9300 010f                 sts TicTac, temp
+00032f c04a                      rjmp exitMenu
                                  turnOnClock: ; continue clock
-000328 e001                      ldi temp, 1
-000329 9300 010e                 sts TicTac, temp
-00032b c022                      rjmp exitMenu
+000330 e001                      ldi temp, 1
+000331 9300 010f                 sts TicTac, temp
+000333 c046                      rjmp exitMenu
                                  
                                  menu2:
-00032c 3022                      cpi sys, 2
-00032d f481                      brne menu3
+000334 3022                      cpi sys, 2
+000335 f481                      brne menu3
                                  ; 2 assign hours
-00032e e010                      ldi common, 0
-00032f 9310 010c                 sts CurrentRightButton, common
-000331 9310 010a                 sts RightButton + 2, common
-000333 9110 0106                 lds common, Hours
-000335 9513                      inc common
-000336 9310 0106                 sts Hours, common
-000338 3118                      cpi common, 24
-000339 f409                      brne exitMenu2
-00033a 2711                      eor common, common
+000336 e010                      ldi common, 0
+000337 9310 010d                 sts CurrentRightButton, common
+000339 9310 010a                 sts RightButton + 2, common
+00033b 9110 0106                 lds common, Hours
+00033d 9513                      inc common
+00033e 9310 0106                 sts Hours, common
+000340 3118                      cpi common, 24
+000341 f409                      brne exitMenu2
+000342 2711                      eor common, common
                                  
                                  exitMenu2:
-00033b 9310 0106                 sts Hours, common
-00033d c010                      rjmp exitMenu
+000343 9310 0106                 sts Hours, common
+000345 c034                      rjmp exitMenu
                                  
                                  menu3:
-00033e 3023                      cpi sys, 3
-00033f f471                      brne menu4
+000346 3023                      cpi sys, 3
+000347 f471                      brne menu4
                                  ; 3 assign minutes
-000340 e010                      ldi common, 0
-000341 9310 010c                 sts CurrentRightButton, common
-000343 9310 010b                 sts RightButton + 3, common
-000345 9110 0105                 lds common, Minutes
-000347 9513                      inc common
-000348 331c                      cpi common, 60
-000349 f409                      brne exitMenu3
-00034a 2711                      eor common, common
+000348 e010                      ldi common, 0
+000349 9310 010d                 sts CurrentRightButton, common
+00034b 9310 010b                 sts RightButton + 3, common
+00034d 9110 0105                 lds common, Minutes
+00034f 9513                      inc common
+000350 331c                      cpi common, 60
+000351 f409                      brne exitMenu3
+000352 2711                      eor common, common
                                  
                                  exitMenu3:
-00034b 9310 0105                 sts Minutes, common
-00034d c000                      rjmp exitMenu
+000353 9310 0105                 sts Minutes, common
+000355 c024                      rjmp exitMenu
                                  
                                  menu4:
+000356 3024                      cpi sys, 4
+000357 f511                      brne menu5
+                                 ; 4 show temperature
+000358 9110 010c                 lds common, RightButton + 4
+00035a 9513                      inc common
+00035b 9310 010c                 sts RightButton + 4, common
+00035d 9310 010d                 sts CurrentRightButton, common
+00035f 3012                      cpi common, 2
+000360 f429                      brne exitMenu4
+000361 2711                      eor common, common
+000362 9310 010c                 sts RightButton + 4, common
+000364 9310 010d                 sts CurrentRightButton, common
+                                 
+                                 exitMenu4:
+000366 dd3d                      rcall GetTemperature0
+000367 ddd5                      rcall GetTemperature1
+000368 9130 0111                 lds digit0, Temperature
+00036a 9140 0112                 lds digit1, Temperature + 1
+00036c 7f30
+00036d 704f
+00036e 2b34
+00036f 2744
+000370 fd37
+000371 c001
+000372 c002
+000373 7f38
+000374 6040                      ComposeTemperature digit0, digit1
+000375 9330 0111                 sts Temperature, digit0
+000377 9340 0112                 sts Temperature + 1, digit1
+000379 c000                      rjmp exitMenu
+                                 
+                                 menu5:
                                  exitMenu:
-00034e 9508                      ret
+00037a 9508                      ret
                                  
                                  ;========================
                                  
@@ -2162,43 +2240,145 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  				/*ldi common, 0b00100000		; cathode
                                  				out PortB, common     
                                  				rcall Delay_1ms */
-00034f 9508                      				ret
+00037b 9508                      				ret
                                  ;*********************************************************
                                  
                                   ;==========================================================
                                  DisplayTwoPoints:
-000350 ff50                      				SBRS twoPoints, 0
-000351 c005                      				rjmp NoBlink	
+00037c ff50                      				SBRS twoPoints, 0
+00037d c005                      				rjmp NoBlink	
                                  					
                                  				; two dots
-000352 e210                      				ldi common, 0b00100000		
-000353 b918                      				out PortC, common
-000354 e010                      				ldi common, 0b00000000		
-000355 b91b                      				out PortD, common
-000356 dcc4                      				rcall Delay_1ms
+00037e e210                      				ldi common, 0b00100000		
+00037f b918                      				out PortC, common
+000380 e010                      				ldi common, 0b00000000		
+000381 b91b                      				out PortD, common
+000382 dc98                      				rcall Delay_1ms
                                  
                                  				NoBlink:
-000357 e010                      				ldi common, 0b00000000		
-000358 b918                      				out PortC, common
-000359 e010                      				ldi common, 0b00000000		
-00035a b91b                      				out PortD, common
+000383 e010                      				ldi common, 0b00000000		
+000384 b918                      				out PortC, common
+000385 e010                      				ldi common, 0b00000000		
+000386 b91b                      				out PortD, common
                                  
-00035b 9508                      				ret
+000387 9508                      				ret
                                  
+                                 ;*********************************************
+                                 DisplayTemperature:
+000388 2733                      				eor digit0, digit0
+000389 2744                      				eor digit1, digit1
+                                 				;GradeNumber Temperature + 1, digit0, digit1
+00038a 9100 0112                 				lds temp, Temperature + 1
+00038c ff00                      				sbrs temp, 0
+00038d c007                      				rjmp nosign
+                                 				; display sign
+00038e e810                      				ldi common, 0b10000000		
+                                 				;out PortD, common	
+                                 				/*mov sys, digit0
+                                 				Get_constant sys, digitsG
+                                 				or sys, common*/
+00038f e820                      				ldi sys, 0b10000000
+000390 2b21                      				or sys, common
+000391 b92b                      				out PortD, sys
+                                 				/*mov temp, digit0
+                                 				Get_constant temp, digits*/
+000392 e000                      				ldi temp, 0b00000000
+000393 b905                      				out PortB, temp
+000394 dc86                      				rcall Delay_1ms
+                                 
+                                 				nosign:
+                                 				; temperature
+                                 
+                                 				;ldi common, 0b10000000		
+                                 				;out PortD, common	
+                                 				/*mov sys, digit0
+                                 				Get_constant sys, digitsG
+                                 				or sys, common*/
+000395 e020                      				ldi sys, 0b00000000
+000396 b92b                      				out PortD, sys
+                                 				;mov temp, digit0
+                                 				;Get_constant temp, digits
+000397 e000                      				ldi temp, 0b00000000
+000398 b905                      				out PortB, temp
+000399 dc81                      				rcall Delay_1ms
+                                 
+                                 
+00039a 2733                      				eor digit0, digit0
+00039b 2744                      				eor digit1, digit1
+00039c 9100 0111
+00039e e02a
+00039f 2777
+0003a0 2788
+0003a1 2f80
+0003a2 0b02
+0003a3 f010
+0003a4 9573
+0003a5 cffb
+0003a6 2f37
+0003a7 2f48                      				GradeNumber Temperature, digit0, digit1
+                                 
+0003a8 e410                      				ldi common, 0b01000000		
+                                 				;out PortD, common
+0003a9 2f23                      				mov sys, digit0
+0003aa e0fa
+0003ab e0ec
+0003ac 2f62
+0003ad 0fe6
+0003ae e060
+0003af 1ff6
+0003b0 9124                      				Get_constant sys, digitsG
+0003b1 2b21                      				or sys, common
+0003b2 b92b                      				out PortD, sys
+0003b3 2f03                      				mov temp, digit0
+0003b4 e0fa
+0003b5 e1e6
+0003b6 2f60
+0003b7 0fe6
+0003b8 e060
+0003b9 1ff6
+0003ba 9104                      				Get_constant temp, digits
+0003bb b905                      				out PortB, temp      
+0003bc dc5e                      				rcall Delay_1ms
+                                 
+0003bd e210                      				ldi common, 0b00100000		
+                                 				;out PortD, common	
+0003be 2f24                      				mov sys, digit1
+0003bf e0fa
+0003c0 e0ec
+0003c1 2f62
+0003c2 0fe6
+0003c3 e060
+0003c4 1ff6
+0003c5 9124                      				Get_constant sys, digitsG
+0003c6 2b21                      				or sys, common
+0003c7 b92b                      				out PortD, sys
+0003c8 2f04                      				mov temp, digit1
+0003c9 e0fa
+0003ca e1e6
+0003cb 2f60
+0003cc 0fe6
+0003cd e060
+0003ce 1ff6
+0003cf 9104                      				Get_constant temp, digits
+0003d0 b905                      				out PortB, temp
+0003d1 dc49                      				rcall Delay_1ms
+                                 
+0003d2 9508                      				ret
+                                 ;****************************************************************
                                  DisplayMenu:
-00035c 2733                      				eor digit0, digit0
-00035d 2744                      				eor digit1, digit1
-00035e 9100 0107
-000360 e02a
-000361 2777
-000362 2788
-000363 2f80
-000364 0b02
-000365 f010
-000366 9573
-000367 cffb
-000368 2f37
-000369 2f48                      				GradeNumber LeftButton, digit0, digit1 
+0003d3 2733                      				eor digit0, digit0
+0003d4 2744                      				eor digit1, digit1
+0003d5 9100 0107
+0003d7 e02a
+0003d8 2777
+0003d9 2788
+0003da 2f80
+0003db 0b02
+0003dc f010
+0003dd 9573
+0003de cffb
+0003df 2f37
+0003e0 2f48                      				GradeNumber LeftButton, digit0, digit1 
                                  
                                  				/*ldi common, 0b10000000		
                                  				out PortD, common	
@@ -2211,42 +2391,42 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  				out PortB, temp
                                  				rcall Delay_1ms*/
                                  
-00036a e410                      				ldi common, 0b01000000		
-00036b b91b                      				out PortD, common
-00036c 2f24                      				mov sys, digit1
-00036d e0f9
-00036e e3e2
-00036f 2f62
-000370 0fe6
-000371 e060
-000372 1ff6
-000373 9124                      				Get_constant sys, digitsG
-000374 2b21                      				or sys, common
-000375 b92b                      				out PortD, sys
-000376 2f04                      				mov temp, digit1
-000377 e0f9
-000378 e3ec
-000379 2f60
-00037a 0fe6
-00037b e060
-00037c 1ff6
-00037d 9104                      				Get_constant temp, digits
-00037e b905                      				out PortB, temp      
-00037f dc9b                      				rcall Delay_1ms
+0003e1 e410                      				ldi common, 0b01000000		
+                                 				;out PortD, common
+0003e2 2f24                      				mov sys, digit1
+0003e3 e0fa
+0003e4 e0ec
+0003e5 2f62
+0003e6 0fe6
+0003e7 e060
+0003e8 1ff6
+0003e9 9124                      				Get_constant sys, digitsG
+0003ea 2b21                      				or sys, common
+0003eb b92b                      				out PortD, sys
+0003ec 2f04                      				mov temp, digit1
+0003ed e0fa
+0003ee e1e6
+0003ef 2f60
+0003f0 0fe6
+0003f1 e060
+0003f2 1ff6
+0003f3 9104                      				Get_constant temp, digits
+0003f4 b905                      				out PortB, temp      
+0003f5 dc25                      				rcall Delay_1ms
                                  
-000380 2733                      				eor digit0, digit0
-000381 2744                      				eor digit1, digit1
-000382 9100 010c
-000384 e02a
-000385 2777
-000386 2788
-000387 2f80
-000388 0b02
-000389 f010
-00038a 9573
-00038b cffb
-00038c 2f37
-00038d 2f48                      				GradeNumber CurrentRightButton, digit0, digit1 
+0003f6 2733                      				eor digit0, digit0
+0003f7 2744                      				eor digit1, digit1
+0003f8 9100 010d
+0003fa e02a
+0003fb 2777
+0003fc 2788
+0003fd 2f80
+0003fe 0b02
+0003ff f010
+000400 9573
+000401 cffb
+000402 2f37
+000403 2f48                      				GradeNumber CurrentRightButton, digit0, digit1 
                                  
                                  				/*ldi common, 0b00100000		
                                  				out PortD, common	
@@ -2259,299 +2439,297 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                  				out PortB, temp
                                  				rcall Delay_1ms*/				
                                  			      
-00038e e110                      				ldi common, 0b00010000		
-00038f b91b                      				out PortD, common
-000390 2f24                      				mov sys, digit1
-000391 e0f9
-000392 e3e2
-000393 2f62
-000394 0fe6
-000395 e060
-000396 1ff6
-000397 9124                      				Get_constant sys, digitsG
-000398 2b21                      				or sys, common
-000399 b92b                      				out PortD, sys
-00039a 2f04                      				mov temp, digit1
-00039b e0f9
-00039c e3ec
-00039d 2f60
-00039e 0fe6
-00039f e060
-0003a0 1ff6
-0003a1 9104                      				Get_constant temp, digits
-0003a2 b905                      				out PortB, temp      
-0003a3 dc77                      				rcall Delay_1ms
-0003a4 9508                      ret
+000404 e110                      				ldi common, 0b00010000		
+                                 				;out PortD, common
+000405 2f24                      				mov sys, digit1
+000406 e0fa
+000407 e0ec
+000408 2f62
+000409 0fe6
+00040a e060
+00040b 1ff6
+00040c 9124                      				Get_constant sys, digitsG
+00040d 2b21                      				or sys, common
+00040e b92b                      				out PortD, sys
+00040f 2f04                      				mov temp, digit1
+000410 e0fa
+000411 e1e6
+000412 2f60
+000413 0fe6
+000414 e060
+000415 1ff6
+000416 9104                      				Get_constant temp, digits
+000417 b905                      				out PortB, temp      
+000418 dc02                      				rcall Delay_1ms
+000419 9508                      ret
                                  
                                  Display:		
                                  				;============================================================
-0003a5 9100 0108                 				lds temp, RightButton 
-0003a7 3000                      				cpi temp, 0
-0003a8 f009                      				breq showHours
+00041a 9100 0108                 				lds temp, RightButton 
+00041c 3000                      				cpi temp, 0
+00041d f009                      				breq showHours
                                  
-0003a9 c075                      				rjmp showNext
+00041e c071                      				rjmp showNext
                                  				showHours:
                                  				; Hours
-0003aa 2733                      				eor digit0, digit0
-0003ab 2744                      				eor digit1, digit1
-0003ac 9100 0106
-0003ae e02a
-0003af 2777
-0003b0 2788
-0003b1 2f80
-0003b2 0b02
-0003b3 f010
-0003b4 9573
-0003b5 cffb
-0003b6 2f37
-0003b7 2f48                      				GradeNumber Hours, digit0, digit1
+00041f 2733                      				eor digit0, digit0
+000420 2744                      				eor digit1, digit1
+000421 9100 0106
+000423 e02a
+000424 2777
+000425 2788
+000426 2f80
+000427 0b02
+000428 f010
+000429 9573
+00042a cffb
+00042b 2f37
+00042c 2f48                      				GradeNumber Hours, digit0, digit1
                                  
-0003b8 e810                      				ldi common, 0b10000000		
-0003b9 b91b                      				out PortD, common	
-0003ba 2f23                      				mov sys, digit0
-0003bb e0f9
-0003bc e3e2
-0003bd 2f62
-0003be 0fe6
-0003bf e060
-0003c0 1ff6
-0003c1 9124                      				Get_constant sys, digitsG
-0003c2 2b21                      				or sys, common
-0003c3 b92b                      				out PortD, sys
-0003c4 2f03                      				mov temp, digit0
-0003c5 e0f9
-0003c6 e3ec
-0003c7 2f60
-0003c8 0fe6
-0003c9 e060
-0003ca 1ff6
-0003cb 9104                      				Get_constant temp, digits
-0003cc b905                      				out PortB, temp
-0003cd dc4d                      				rcall Delay_1ms				
+00042d e810                      				ldi common, 0b10000000		
+                                 				;out PortD, common	
+00042e 2f23                      				mov sys, digit0
+00042f e0fa
+000430 e0ec
+000431 2f62
+000432 0fe6
+000433 e060
+000434 1ff6
+000435 9124                      				Get_constant sys, digitsG
+000436 2b21                      				or sys, common
+000437 b92b                      				out PortD, sys
+000438 2f03                      				mov temp, digit0
+000439 e0fa
+00043a e1e6
+00043b 2f60
+00043c 0fe6
+00043d e060
+00043e 1ff6
+00043f 9104                      				Get_constant temp, digits
+000440 b905                      				out PortB, temp
+000441 dbd9                      				rcall Delay_1ms				
                                  			      
-0003ce e410                      				ldi common, 0b01000000		
-0003cf b91b                      				out PortD, common
-0003d0 2f24                      				mov sys, digit1
-0003d1 e0f9
-0003d2 e3e2
-0003d3 2f62
-0003d4 0fe6
-0003d5 e060
-0003d6 1ff6
-0003d7 9124                      				Get_constant sys, digitsG
-0003d8 2b21                      				or sys, common
-0003d9 b92b                      				out PortD, sys
-0003da 2f04                      				mov temp, digit1
-0003db e0f9
-0003dc e3ec
-0003dd 2f60
-0003de 0fe6
-0003df e060
-0003e0 1ff6
-0003e1 9104                      				Get_constant temp, digits
-0003e2 b905                      				out PortB, temp      
-0003e3 dc37                      				rcall Delay_1ms
+000442 e410                      				ldi common, 0b01000000		
+                                 				;out PortD, common
+000443 2f24                      				mov sys, digit1
+000444 e0fa
+000445 e0ec
+000446 2f62
+000447 0fe6
+000448 e060
+000449 1ff6
+00044a 9124                      				Get_constant sys, digitsG
+00044b 2b21                      				or sys, common
+00044c b92b                      				out PortD, sys
+00044d 2f04                      				mov temp, digit1
+00044e e0fa
+00044f e1e6
+000450 2f60
+000451 0fe6
+000452 e060
+000453 1ff6
+000454 9104                      				Get_constant temp, digits
+000455 b905                      				out PortB, temp      
+000456 dbc4                      				rcall Delay_1ms
                                  
-0003e4 2733                      				eor digit0, digit0
-0003e5 2744                      				eor digit1, digit1
-0003e6 9100 0105
-0003e8 e02a
-0003e9 2777
-0003ea 2788
-0003eb 2f80
-0003ec 0b02
-0003ed f010
-0003ee 9573
-0003ef cffb
-0003f0 2f37
-0003f1 2f48                      				GradeNumber Minutes, digit0, digit1  
+000457 2733                      				eor digit0, digit0
+000458 2744                      				eor digit1, digit1
+000459 9100 0105
+00045b e02a
+00045c 2777
+00045d 2788
+00045e 2f80
+00045f 0b02
+000460 f010
+000461 9573
+000462 cffb
+000463 2f37
+000464 2f48                      				GradeNumber Minutes, digit0, digit1  
                                  			    
-0003f2 e210                      				ldi common, 0b00100000		
-0003f3 b91b                      				out PortD, common	
-0003f4 2f23                      				mov sys, digit0
-0003f5 e0f9
-0003f6 e3e2
-0003f7 2f62
-0003f8 0fe6
-0003f9 e060
-0003fa 1ff6
-0003fb 9124                      				Get_constant sys, digitsG
-0003fc 2b21                      				or sys, common
-0003fd b92b                      				out PortD, sys
-0003fe 2f03                      				mov temp, digit0
-0003ff e0f9
-000400 e3ec
-000401 2f60
-000402 0fe6
-000403 e060
-000404 1ff6
-000405 9104                      				Get_constant temp, digits
-000406 b905                      				out PortB, temp
-000407 dc13                      				rcall Delay_1ms				
+000465 e210                      				ldi common, 0b00100000		
+                                 				;out PortD, common	
+000466 2f23                      				mov sys, digit0
+000467 e0fa
+000468 e0ec
+000469 2f62
+00046a 0fe6
+00046b e060
+00046c 1ff6
+00046d 9124                      				Get_constant sys, digitsG
+00046e 2b21                      				or sys, common
+00046f b92b                      				out PortD, sys
+000470 2f03                      				mov temp, digit0
+000471 e0fa
+000472 e1e6
+000473 2f60
+000474 0fe6
+000475 e060
+000476 1ff6
+000477 9104                      				Get_constant temp, digits
+000478 b905                      				out PortB, temp
+000479 dba1                      				rcall Delay_1ms				
                                  			      
-000408 e110                      				ldi common, 0b00010000		
-000409 b91b                      				out PortD, common
-00040a 2f24                      				mov sys, digit1
-00040b e0f9
-00040c e3e2
-00040d 2f62
-00040e 0fe6
-00040f e060
-000410 1ff6
-000411 9124                      				Get_constant sys, digitsG
-000412 2b21                      				or sys, common
-000413 b92b                      				out PortD, sys
-000414 2f04                      				mov temp, digit1
-000415 e0f9
-000416 e3ec
-000417 2f60
-000418 0fe6
-000419 e060
-00041a 1ff6
-00041b 9104                      				Get_constant temp, digits
-00041c b905                      				out PortB, temp      
-00041d dbfd                      				rcall Delay_1ms   
+00047a e110                      				ldi common, 0b00010000		
+                                 				;out PortD, common
+00047b 2f24                      				mov sys, digit1
+00047c e0fa
+00047d e0ec
+00047e 2f62
+00047f 0fe6
+000480 e060
+000481 1ff6
+000482 9124                      				Get_constant sys, digitsG
+000483 2b21                      				or sys, common
+000484 b92b                      				out PortD, sys
+000485 2f04                      				mov temp, digit1
+000486 e0fa
+000487 e1e6
+000488 2f60
+000489 0fe6
+00048a e060
+00048b 1ff6
+00048c 9104                      				Get_constant temp, digits
+00048d b905                      				out PortB, temp      
+00048e db8c                      				rcall Delay_1ms   
                                  
-00041e c079                      				rjmp endDisplayDigits
+00048f c075                      				rjmp endDisplayDigits
                                  
                                  				; Minutes
                                  				showNext:
-00041f 9100 0108                 				lds temp, RightButton 
-000421 3001                      				cpi temp, 1
-000422 f009                      				breq showMinutes
+000490 9100 0108                 				lds temp, RightButton 
+000492 3001                      				cpi temp, 1
+000493 f009                      				breq showMinutes
                                  
-000423 c074                      				rjmp endDisplayDigits
+000494 c070                      				rjmp endDisplayDigits
                                  
                                  				showMinutes:
                                             
-000424 2733                      				eor digit0, digit0
-000425 2744                      				eor digit1, digit1
-000426 9100 0105
-000428 e02a
-000429 2777
-00042a 2788
-00042b 2f80
-00042c 0b02
-00042d f010
-00042e 9573
-00042f cffb
-000430 2f37
-000431 2f48                      				GradeNumber Minutes, digit0, digit1 
+000495 2733                      				eor digit0, digit0
+000496 2744                      				eor digit1, digit1
+000497 9100 0105
+000499 e02a
+00049a 2777
+00049b 2788
+00049c 2f80
+00049d 0b02
+00049e f010
+00049f 9573
+0004a0 cffb
+0004a1 2f37
+0004a2 2f48                      				GradeNumber Minutes, digit0, digit1 
                                  
-000432 e810                      				ldi common, 0b10000000		
-000433 b91b                      				out PortD, common	
-000434 2f23                      				mov sys, digit0
-000435 e0f9
-000436 e3e2
-000437 2f62
-000438 0fe6
-000439 e060
-00043a 1ff6
-00043b 9124                      				Get_constant sys, digitsG
-00043c 2b21                      				or sys, common
-00043d b92b                      				out PortD, sys
-00043e 2f03                      				mov temp, digit0
-00043f e0f9
-000440 e3ec
-000441 2f60
-000442 0fe6
-000443 e060
-000444 1ff6
-000445 9104                      				Get_constant temp, digits
-000446 b905                      				out PortB, temp
-000447 dbd3                      				rcall Delay_1ms				
+0004a3 e810                      				ldi common, 0b10000000		
+                                 				;out PortD, common	
+0004a4 2f23                      				mov sys, digit0
+0004a5 e0fa
+0004a6 e0ec
+0004a7 2f62
+0004a8 0fe6
+0004a9 e060
+0004aa 1ff6
+0004ab 9124                      				Get_constant sys, digitsG
+0004ac 2b21                      				or sys, common
+0004ad b92b                      				out PortD, sys
+0004ae 2f03                      				mov temp, digit0
+0004af e0fa
+0004b0 e1e6
+0004b1 2f60
+0004b2 0fe6
+0004b3 e060
+0004b4 1ff6
+0004b5 9104                      				Get_constant temp, digits
+0004b6 b905                      				out PortB, temp
+0004b7 db63                      				rcall Delay_1ms				
                                  			      
-000448 e410                      				ldi common, 0b01000000		
-000449 b91b                      				out PortD, common
-00044a 2f24                      				mov sys, digit1
-00044b e0f9
-00044c e3e2
-00044d 2f62
-00044e 0fe6
-00044f e060
-000450 1ff6
-000451 9124                      				Get_constant sys, digitsG
-000452 2b21                      				or sys, common
-000453 b92b                      				out PortD, sys
-000454 2f04                      				mov temp, digit1
-000455 e0f9
-000456 e3ec
-000457 2f60
-000458 0fe6
-000459 e060
-00045a 1ff6
-00045b 9104                      				Get_constant temp, digits
-00045c b905                      				out PortB, temp      
-00045d dbbd                      				rcall Delay_1ms    			  
+0004b8 e410                      				ldi common, 0b01000000		
+                                 				;out PortD, common
+0004b9 2f24                      				mov sys, digit1
+0004ba e0fa
+0004bb e0ec
+0004bc 2f62
+0004bd 0fe6
+0004be e060
+0004bf 1ff6
+0004c0 9124                      				Get_constant sys, digitsG
+0004c1 2b21                      				or sys, common
+0004c2 b92b                      				out PortD, sys
+0004c3 2f04                      				mov temp, digit1
+0004c4 e0fa
+0004c5 e1e6
+0004c6 2f60
+0004c7 0fe6
+0004c8 e060
+0004c9 1ff6
+0004ca 9104                      				Get_constant temp, digits
+0004cb b905                      				out PortB, temp      
+0004cc db4e                      				rcall Delay_1ms    			  
                                  			   
-00045e 2733                      				eor digit0, digit0
-00045f 2744                      				eor digit1, digit1
-000460 9100 0104
-000462 e02a
-000463 2777
-000464 2788
-000465 2f80
-000466 0b02
-000467 f010
-000468 9573
-000469 cffb
-00046a 2f37
-00046b 2f48                      				GradeNumber Seconds, digit0, digit1  
+0004cd 2733                      				eor digit0, digit0
+0004ce 2744                      				eor digit1, digit1
+0004cf 9100 0104
+0004d1 e02a
+0004d2 2777
+0004d3 2788
+0004d4 2f80
+0004d5 0b02
+0004d6 f010
+0004d7 9573
+0004d8 cffb
+0004d9 2f37
+0004da 2f48                      				GradeNumber Seconds, digit0, digit1  
                                  			    
-00046c e210                      				ldi common, 0b00100000		
-00046d b91b                      				out PortD, common	
-00046e 2f23                      				mov sys, digit0
-00046f e0f9
-000470 e3e2
-000471 2f62
-000472 0fe6
-000473 e060
-000474 1ff6
-000475 9124                      				Get_constant sys, digitsG
-000476 2b21                      				or sys, common
-000477 b92b                      				out PortD, sys
-000478 2f03                      				mov temp, digit0
-000479 e0f9
-00047a e3ec
-00047b 2f60
-00047c 0fe6
-00047d e060
-00047e 1ff6
-00047f 9104                      				Get_constant temp, digits
-000480 b905                      				out PortB, temp
-000481 db99                      				rcall Delay_1ms				
+0004db e210                      				ldi common, 0b00100000		
+                                 				;out PortD, common	
+0004dc 2f23                      				mov sys, digit0
+0004dd e0fa
+0004de e0ec
+0004df 2f62
+0004e0 0fe6
+0004e1 e060
+0004e2 1ff6
+0004e3 9124                      				Get_constant sys, digitsG
+0004e4 2b21                      				or sys, common
+0004e5 b92b                      				out PortD, sys
+0004e6 2f03                      				mov temp, digit0
+0004e7 e0fa
+0004e8 e1e6
+0004e9 2f60
+0004ea 0fe6
+0004eb e060
+0004ec 1ff6
+0004ed 9104                      				Get_constant temp, digits
+0004ee b905                      				out PortB, temp
+0004ef db2b                      				rcall Delay_1ms				
                                  			      
-000482 e110                      				ldi common, 0b00010000		
-000483 b91b                      				out PortD, common
-000484 2f24                      				mov sys, digit1
-000485 e0f9
-000486 e3e2
-000487 2f62
-000488 0fe6
-000489 e060
-00048a 1ff6
-00048b 9124                      				Get_constant sys, digitsG
-00048c 2b21                      				or sys, common
-00048d b92b                      				out PortD, sys
-00048e 2f04                      				mov temp, digit1
-00048f e0f9
-000490 e3ec
-000491 2f60
-000492 0fe6
-000493 e060
-000494 1ff6
-000495 9104                      				Get_constant temp, digits
-000496 b905                      				out PortB, temp      
-000497 db83                      				rcall Delay_1ms   
+0004f0 e110                      				ldi common, 0b00010000		
+                                 				;out PortD, common
+0004f1 2f24                      				mov sys, digit1
+0004f2 e0fa
+0004f3 e0ec
+0004f4 2f62
+0004f5 0fe6
+0004f6 e060
+0004f7 1ff6
+0004f8 9124                      				Get_constant sys, digitsG
+0004f9 2b21                      				or sys, common
+0004fa b92b                      				out PortD, sys
+0004fb 2f04                      				mov temp, digit1
+0004fc e0fa
+0004fd e1e6
+0004fe 2f60
+0004ff 0fe6
+000500 e060
+000501 1ff6
+000502 9104                      				Get_constant temp, digits
+000503 b905                      				out PortB, temp      
+000504 db16                      				rcall Delay_1ms   
                                  
                                  				endDisplayDigits:
                                  
-000498 9508                      				ret
+000505 9508                      				ret
                                  
                                  
                                  ;*********************************************************
-                                 
-                                 
                                  
                                  #include "Constants.inc"
                                  
@@ -2564,16 +2742,16 @@ D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm(163): Including fil
                                   //digits: .db 0b00000010, 0b10011110, 0b00100100, 0b00001100, 0b10011000, 0b01001000, 0b01000000, 0b00011110, 0b00000000, 0b00001000	//anod
                                  //digits: .db 0b10111111, 0b10000110, 0b11011011, 0b11001111, 0b11100110, 0b11101101, 0b11111101, 0b10000111, 0b11111111, 0b11101111		//cathod
                                  //digits: .db 0b11000000, 0b111111001, 0b10100100, 0b10110000, 0b10011001, 0b10010010, 0b10000010, 0b11111000, 0b10000000, 0b10010000		// anod arduino
-000499 0202
-00049a 0000
-00049b 0000
-00049c 0200
-00049d 0000                      digitsG: .db 0b00000010, 0b00000010, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000010, 0b00000000, 0b00000000	; PD1
-00049e 2700
-00049f 0309
-0004a0 1226
-0004a1 0710
-0004a2 0200                      digits: .db 0b000000, 0b100111, 0b001001, 0b000011, 0b100110, 0b010010, 0b010000, 0b000111, 0b000000, 0b000010	; PB5-0
+000506 0202
+000507 0000
+000508 0000
+000509 0200
+00050a 0000                      digitsG: .db 0b00000010, 0b00000010, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000010, 0b00000000, 0b00000000	; PD1
+00050b 2700
+00050c 0309
+00050d 1226
+00050e 0710
+00050f 0200                      digits: .db 0b000000, 0b100111, 0b001001, 0b000011, 0b100110, 0b010010, 0b010000, 0b000111, 0b000000, 0b000010	; PB5-0
 
 
 RESOURCE USE INFORMATION
@@ -2591,40 +2769,40 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328P" register use summary:
-x  :   0 y  :   0 z  :  20 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   0 y  :   0 z  :  24 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16: 134 r17: 188 r18:  93 r19:  36 r20:  40 
-r21:   5 r22:  80 r23:  28 r24:  28 r25:   6 r26:   0 r27:   0 r28:   0 
-r29:   0 r30:  40 r31:  40 
+r13:   0 r14:   0 r15:   0 r16: 164 r17: 176 r18: 133 r19:  49 r20:  54 
+r21:   5 r22:  96 r23:  32 r24:  32 r25:   6 r26:   0 r27:   0 r28:   0 
+r29:   0 r30:  48 r31:  48 
 Registers used: 13 out of 35 (37.1%)
 
 "ATmega328P" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :  20 add   :  20 adiw  :   0 and   :   0 
-andi  :   0 asr   :   0 bclr  :   0 bld   :   1 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   6 break :   0 breq  :   7 brge  :   0 brhc  :   0 
+.lds  :   0 .sts  :   0 adc   :  24 add   :  24 adiw  :   0 and   :   0 
+andi  :   4 asr   :   0 bclr  :   0 bld   :   1 brbc  :   0 brbs  :   0 
+brcc  :   0 brcs  :   7 break :   0 breq  :   9 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :  33 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   1 call  :   0 cbi   : 102 cbr   :  16 
-clc   :   0 clh   :   0 cli   :   2 cln   :   0 clr   :   0 cls   :   0 
+brne  :  39 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   1 call  :   0 cbi   : 102 cbr   :  18 
+clc   :   0 clh   :   0 cli   :   4 cln   :   0 clr   :   0 cls   :   0 
 clt   :   1 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :  21 cpse  :   0 dec   :  20 eor   :  35 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :  15 jmp   :   2 
-ld    :   0 ldd   :   0 ldi   : 130 lds   :  22 lpm   :  40 lsl   :   0 
-lsr   :   0 mov   :  58 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :  32 or    :  10 ori   :   0 out   :  40 pop   :   0 
-push  :   0 rcall : 190 ret   :  16 reti  :   3 rjmp  :  26 rol   :   0 
-ror   :   0 sbc   :   6 sbci  :   0 sbi   :  54 sbic  :  19 sbis  :  16 
-sbiw  :   0 sbr   :  16 sbrc  :  33 sbrs  :  34 sec   :   0 seh   :   0 
-sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   1 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :  51 
+cpi   :  28 cpse  :   0 dec   :  21 eor   :  44 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :  17 jmp   :   2 
+ld    :   0 ldd   :   0 ldi   : 151 lds   :  29 lpm   :  48 lsl   :   0 
+lsr   :   0 mov   :  69 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :  32 or    :  15 ori   :   0 out   :  38 pop   :   0 
+push  :   0 rcall : 168 ret   :  19 reti  :   3 rjmp  :  37 rol   :   0 
+ror   :   0 sbc   :   7 sbci  :   0 sbi   :  54 sbic  :  19 sbis  :  16 
+sbiw  :   0 sbr   :  18 sbrc  :  35 sbrs  :  35 sec   :   0 seh   :   0 
+sei   :   4 sen   :   0 ser   :   0 ses   :   0 set   :   1 sev   :   0 
+sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :  57 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 37 out of 113 (32.7%)
+Instructions used: 38 out of 113 (33.6%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000946   2312     20   2332   32768   7.1%
-[.dseg] 0x000100 0x000111      0     17     17    2048   0.8%
+[.cseg] 0x000000 0x000a20   2530     20   2550   32768   7.8%
+[.dseg] 0x000100 0x000114      0     20     20    2048   1.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
 Assembly complete, 0 errors, 0 warnings

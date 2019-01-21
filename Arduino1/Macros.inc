@@ -81,20 +81,24 @@ ldi ZH,High(@1<<1)
 ldi ZL,Low(@1<<1)   ;инициализация массива
 
 mov inMacro, @0
-;add inMacro, Low(@1<<1)
-
-/*clr r31      ; Очистить старший байт Z
-ldi r30, Low(@1<<1) ; Установить младший байт Z*/
 
 add ZL, inMacro            ;к 0-му адресу массива
 ldi inMacro, 0 
 adc ZH, inMacro
 
-/*ldi temp, 0             ;прибавление переменной
-add ZL, @0            ;к 0-му адресу массива
-adc ZH, temp*/
-
 lpm @0, Z                    ;загрузка значения
-/*lpm
-mov @0, r0*/
+.endmacro
+
+.macro ComposeTemperature			; @0 - LS BYTE, @1 - MS BYTE, 1111 - are left, return @0 - temperature, @1 - sign
+	andi @0, 0b11110000
+	andi @1, 0b00001111
+	or @0, @1
+	eor @1, @1
+	sbrc @0, 7
+	rjmp negative
+	rjmp notnegative
+	negative:
+	cbr @0, 7
+	sbr @1, 0
+	notnegative:
 .endmacro
