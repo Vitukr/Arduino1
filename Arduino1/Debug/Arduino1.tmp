@@ -36,7 +36,7 @@
   <Minutes><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>30</LINE></Minutes>
   <Hours><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>31</LINE></Hours>
   <LeftButton><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>32</LINE></LeftButton>
-  <RightButton><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>33</LINE></RightButton>
+  <DisplayType><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>33</LINE></DisplayType>
   <CurrentRightButton><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>34</LINE></CurrentRightButton>
   <Seconds5><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>35</LINE></Seconds5>
   <TicTac><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>36</LINE></TicTac>
@@ -45,8 +45,8 @@
   <SecondsTemperature><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>39</LINE></SecondsTemperature>
   <Reset><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>59</LINE></Reset>
   <EXT_INT0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>8</LINE></EXT_INT0>
-  <EXT_INT1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>27</LINE></EXT_INT1>
-  <TIM1_OVF><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>37</LINE></TIM1_OVF>
+  <EXT_INT1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>49</LINE></EXT_INT1>
+  <TIM1_OVF><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>59</LINE></TIM1_OVF>
   <Delay_1ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Delays.inc</FILE><LINE>10</LINE></Delay_1ms>
   <L1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Delays.inc</FILE><LINE>13</LINE></L1>
   <Delay_10ms><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Delays.inc</FILE><LINE>21</LINE></Delay_10ms>
@@ -64,39 +64,42 @@
   <Init_TIMER1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Init.inc</FILE><LINE>8</LINE></Init_TIMER1>
   <Init_PORTS><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Init.inc</FILE><LINE>16</LINE></Init_PORTS>
   <Init_Ext_Interups><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Init.inc</FILE><LINE>25</LINE></Init_Ext_Interups>
-  <Timer_restart><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>145</LINE></Timer_restart>
-  <Main><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>98</LINE></Main>
-  <showOthers><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>106</LINE></showOthers>
+  <Timer_restart><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>150</LINE></Timer_restart>
+  <Main><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>103</LINE></Main>
+  <showOthers><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>111</LINE></showOthers>
   <DisplayMenu><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc</FILE><LINE>104</LINE></DisplayMenu>
-  <EndMain><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>141</LINE></EndMain>
-  <mainD1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>116</LINE></mainD1>
+  <EndMain><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>146</LINE></EndMain>
+  <mainD1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>121</LINE></mainD1>
   <DisplayTwoPoints><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc</FILE><LINE>17</LINE></DisplayTwoPoints>
   <Display><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc</FILE><LINE>158</LINE></Display>
-  <mainD2><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>124</LINE></mainD2>
-  <mainD3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>130</LINE></mainD3>
+  <mainD2><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>129</LINE></mainD2>
+  <mainD3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>135</LINE></mainD3>
   <DisplayTemperature><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc</FILE><LINE>37</LINE></DisplayTemperature>
-  <GetTemperature0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>152</LINE></GetTemperature0>
-  <yesDS0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>159</LINE></yesDS0>
-  <NoDS0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>167</LINE></NoDS0>
-  <GetTemperature1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>170</LINE></GetTemperature1>
-  <yesDS1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>177</LINE></yesDS1>
-  <NoDS1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>194</LINE></NoDS1>
-  <exitInt0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>16</LINE></exitInt0>
+  <GetTemperature0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>157</LINE></GetTemperature0>
+  <GetTemperature1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\main.asm</FILE><LINE>175</LINE></GetTemperature1>
+  <exitInt0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>15</LINE></exitInt0>
+  <left0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>18</LINE></left0>
+  <left1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>23</LINE></left1>
+  <lbupdate><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>40</LINE></lbupdate>
+  <left2><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>28</LINE></left2>
+  <left3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>33</LINE></left3>
+  <left4><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>38</LINE></left4>
   <MenuL><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>9</LINE></MenuL>
-  <Continue><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>54</LINE></Continue>
-  <getT><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>62</LINE></getT>
-  <menu1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>28</LINE></menu1>
-  <exitMenu0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>25</LINE></exitMenu0>
-  <exitMenu><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>114</LINE></exitMenu>
-  <menu2><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>54</LINE></menu2>
-  <exitMenu1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>42</LINE></exitMenu1>
-  <turnOnClock><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>49</LINE></turnOnClock>
-  <menu3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>72</LINE></menu3>
-  <exitMenu2><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>68</LINE></exitMenu2>
-  <menu4><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>89</LINE></menu4>
-  <exitMenu3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>85</LINE></exitMenu3>
-  <menu5><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>113</LINE></menu5>
-  <exitMenu4><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>103</LINE></exitMenu4>
+  <Continue><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>76</LINE></Continue>
+  <getT><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Interupts.inc</FILE><LINE>84</LINE></getT>
+  <menu1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>25</LINE></menu1>
+  <exitMenu0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>20</LINE></exitMenu0>
+  <exitMenu><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>90</LINE></exitMenu>
+  <menu2><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>39</LINE></menu2>
+  <exitMenu1><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>34</LINE></exitMenu1>
+  <menu3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>51</LINE></menu3>
+  <exitMenu2><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>43</LINE></exitMenu2>
+  <menu4><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>63</LINE></menu4>
+  <exitMenu3><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>55</LINE></exitMenu3>
+  <menu5><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>89</LINE></menu5>
+  <exitMenu4><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>67</LINE></exitMenu4>
+  <yesDS0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>76</LINE></yesDS0>
+  <NoDS0><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Menu.inc</FILE><LINE>80</LINE></NoDS0>
   <Display_test><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc</FILE><LINE>9</LINE></Display_test>
   <NoBlink><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc</FILE><LINE>28</LINE></NoBlink>
   <nosign><FILE>D:\Vit\Documents\Arduino projects\Arduino1\Arduino1\Display.inc</FILE><LINE>59</LINE></nosign>

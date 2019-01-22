@@ -12,10 +12,32 @@ inc sys
 cpi sys, 5
 brne exitInt0
 eor sys, sys
-
 exitInt0:
 sts LeftButton, sys 
+; set CurrentRightButton
+left0:
+cpi sys, 0
+brne left1
+lds temp, DisplayType
+rjmp lbupdate
+left1:
+cpi sys, 1
+brne left2
+lds temp, TicTac
+rjmp lbupdate
+left2:
+cpi sys, 2
+brne left3
 ldi temp, 0
+rjmp lbupdate
+left3:
+cpi sys, 3
+brne left4
+ldi temp, 0
+rjmp lbupdate
+left4:
+
+lbupdate:
 sts CurrentRightButton, temp
 ; event
 ldi sys, 2

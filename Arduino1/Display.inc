@@ -157,7 +157,7 @@ ret
 
 Display:		
 				;============================================================
-				lds temp, RightButton 
+				lds temp, DisplayType 
 				cpi temp, 0
 				breq showHours
 
@@ -220,7 +220,7 @@ Display:
 
 				; Minutes
 				showNext:
-				lds temp, RightButton 
+				lds temp, DisplayType 
 				cpi temp, 1
 				breq showMinutes
 

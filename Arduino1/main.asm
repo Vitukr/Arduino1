@@ -30,7 +30,7 @@ Seconds:			.byte 1
 Minutes:			.byte 1
 Hours:				.byte 1
 LeftButton:			.byte 1
-RightButton:		.byte 5
+DisplayType:		.byte 1
 CurrentRightButton: .byte 1
 Seconds5:			.byte 1
 TicTac:				.byte 1
@@ -64,19 +64,21 @@ Reset: // Предустановки
 				cli
 
 				eor temp, temp
+				sts DisplayType, temp
+				sts TicTac, temp
 				sts LeftButton, temp
-				sts RightButton, temp
+				//sts RightButton, temp
 				;sts MainDisplay, temp
 				;ldi temp, 1
-				sts RightButton + 1, temp
+				/*sts RightButton + 1, temp
 				sts RightButton + 2, temp
-				sts RightButton + 3, temp
+				sts RightButton + 3, temp*/
 				sts CurrentRightButton, temp
 				ldi temp, 2
 				sts Seconds5, temp
 				ldi temp, 10
 				sts SecondsTemperature, temp
-				ldi temp, 37
+				ldi temp, 10
 				sts Temperature, temp
 
 				ldi temp, 0
@@ -87,6 +89,9 @@ Reset: // Предустановки
 				rcall Init_TIMER1
 				rcall Init_PORTS
 				rcall Init_Ext_Interups
+
+				OneWireReset
+				ClearOneWire
 				
 				eor halfSecond, halfSecond
 				
@@ -104,7 +109,7 @@ Main:
 				rjmp EndMain
 
 				showOthers:
-				lds temp, RightButton
+				lds temp, DisplayType
 				;============================
 				cpi temp, 0
 				brne mainD1
@@ -150,31 +155,31 @@ Timer_restart:			; 0.5 sec
 				ret
 ;========================
 GetTemperature0:
-				OneWireReset
+				/*OneWireReset
 				lds temp, DS
 				cpi temp, 1
 				breq yesDS0
 				rjmp NoDS0
 				; DS
-				yesDS0:
+				yesDS0:*/
 
 				ldi common, $CC
 				OneWireWrite common
 				ldi common, $44
 				OneWireWrite common
 				rcall Delay_480ms
-				; NoDS
-				NoDS0:
+				rcall Delay_100ms
+				rcall Delay_100ms
 				ret
 
 GetTemperature1:
-				OneWireReset
+				/*OneWireReset
 				lds temp, DS
 				cpi temp, 1
 				breq yesDS1
 				rjmp NoDS1
 				; DS
-				yesDS1:
+				yesDS1:*/
 
 				ldi common, $CC
 				OneWireWrite common
@@ -187,11 +192,8 @@ GetTemperature1:
 				ComposeTemperature common, sys
 				sts Temperature, common
 				sts Temperature + 1, sys
-
-				OneWireReset
-
 				; NoDS
-				NoDS1:
+				;NoDS1:
 				ret
 ;=========================================================
 #include "Init.inc"

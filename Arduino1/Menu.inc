@@ -12,102 +12,78 @@ lds sys, LeftButton
 cpi sys, 0
 brne menu1
 ; 0 display h:m, m:s, temperature, turn off display
-lds common, RightButton + 0
+lds common, DisplayType
 inc common
-sts RightButton + 0, common
-sts CurrentRightButton, common
 cpi common, 4
 brne exitMenu0
 eor common, common
-sts RightButton + 0, common
-sts CurrentRightButton, common
-
 exitMenu0:
+sts DisplayType, common
+sts CurrentRightButton, common
 rjmp exitMenu
 
 menu1:
 cpi sys, 1
 brne menu2
 ; 1 stop/start waytch
-lds common, RightButton + 1
+lds common, TicTac
 inc common
-sts RightButton + 1, common
-sts CurrentRightButton, common
 cpi common, 2
 brne exitMenu1
 eor common, common
-sts RightButton + 1, common
-sts CurrentRightButton, common
-
 exitMenu1:
-cpi common, 0
-brne turnOnClock
-; stop clock
-ldi temp, 0
-sts TicTac, temp
-rjmp exitMenu
-turnOnClock: ; continue clock
-ldi temp, 1
-sts TicTac, temp
+sts TicTac, common
+sts CurrentRightButton, common
 rjmp exitMenu
 
 menu2:
 cpi sys, 2
 brne menu3
-; 2 assign hours
-ldi common, 0
-sts CurrentRightButton, common
-sts RightButton + 2, common
-lds common, Hours
-inc common
-sts Hours, common
-cpi common, 24
-brne exitMenu2
-eor common, common
 
 exitMenu2:
+eor common, common
+sts CurrentRightButton, common
+lds common, Hours
+inc common
 sts Hours, common
 rjmp exitMenu
 
 menu3:
 cpi sys, 3
 brne menu4
-; 3 assign minutes
-ldi common, 0
-sts CurrentRightButton, common
-sts RightButton + 3, common
-lds common, Minutes
-inc common
-cpi common, 60
-brne exitMenu3
-eor common, common
 
 exitMenu3:
+eor common, common
+sts CurrentRightButton, common
+lds common, Minutes
+inc common
 sts Minutes, common
 rjmp exitMenu
 
 menu4:
 cpi sys, 4
 brne menu5
-; 4 show temperature
-lds common, RightButton + 4
-inc common
-sts RightButton + 4, common
-sts CurrentRightButton, common
-cpi common, 2
-brne exitMenu4
-eor common, common
-sts RightButton + 4, common
-sts CurrentRightButton, common
 
 exitMenu4:
-rcall GetTemperature0
-rcall GetTemperature1
-lds digit0, Temperature
+eor common, common
+sts CurrentRightButton, common
+; start
+				OneWireReset
+				lds temp, DS
+				cpi temp, 1
+				breq yesDS0
+				rjmp NoDS0
+				yesDS0:
+				rcall GetTemperature0
+				rcall GetTemperature1
+				
+				NoDS0:
+				ClearOneWire
+/*lds digit0, Temperature
 lds digit1, Temperature + 1
 ComposeTemperature digit0, digit1
 sts Temperature, digit0
-sts Temperature + 1, digit1
+sts Temperature + 1, digit1*/
 rjmp exitMenu
 
 menu5:
